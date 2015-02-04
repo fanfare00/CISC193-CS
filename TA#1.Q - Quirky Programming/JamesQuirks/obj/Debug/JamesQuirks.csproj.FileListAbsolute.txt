@@ -7,3 +7,12 @@ C:\Users\BT21112\Desktop\JamesQuirks\JamesQuirks\obj\Debug\JamesQuirks.Propertie
 C:\Users\BT21112\Desktop\JamesQuirks\JamesQuirks\obj\Debug\JamesQuirks.csproj.GenerateResource.Cache
 C:\Users\BT21112\Desktop\JamesQuirks\JamesQuirks\obj\Debug\JamesQuirks.exe
 C:\Users\BT21112\Desktop\JamesQuirks\JamesQuirks\obj\Debug\JamesQuirks.pdb
+C:\Users\BT21112\Desktop\CISC 193\TA#1.Q - Quirky Programming\JamesQuirks\bin\Debug\JamesQuirks.exe.config
+C:\Users\BT21112\Desktop\CISC 193\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQuirks.exe
+C:\Users\BT21112\Desktop\CISC 193\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQuirks.pdb
+C:\Users\BT21112\Desktop\CISC 193\TA#1.Q - Quirky Programming\JamesQuirks\bin\Debug\JamesQuirks.exe
+C:\Users\BT21112\Desktop\CISC 193\TA#1.Q - Quirky Programming\JamesQuirks\bin\Debug\JamesQuirks.pdb
+C:\Users\BT21112\Desktop\CISC 193\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQuirks.csprojResolveAssemblyReference.cache
+C:\Users\BT21112\Desktop\CISC 193\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQuirks.quirkyForm.resources
+C:\Users\BT21112\Desktop\CISC 193\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQuirks.Properties.Resources.resources
+C:\Users\BT21112\Desktop\CISC 193\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQuirks.csproj.GenerateResource.Cache
