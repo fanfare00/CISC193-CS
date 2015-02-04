@@ -1,0 +1,9 @@
+C:\Users\BT21112\Desktop\JamesQuirks\JamesQuirks\bin\Debug\JamesQuirks.exe.config
+C:\Users\BT21112\Desktop\JamesQuirks\JamesQuirks\bin\Debug\JamesQuirks.exe
+C:\Users\BT21112\Desktop\JamesQuirks\JamesQuirks\bin\Debug\JamesQuirks.pdb
+C:\Users\BT21112\Desktop\JamesQuirks\JamesQuirks\obj\Debug\JamesQuirks.csprojResolveAssemblyReference.cache
+C:\Users\BT21112\Desktop\JamesQuirks\JamesQuirks\obj\Debug\JamesQuirks.quirkyForm.resources
+C:\Users\BT21112\Desktop\JamesQuirks\JamesQuirks\obj\Debug\JamesQuirks.Properties.Resources.resources
+C:\Users\BT21112\Desktop\JamesQuirks\JamesQuirks\obj\Debug\JamesQuirks.csproj.GenerateResource.Cache
+C:\Users\BT21112\Desktop\JamesQuirks\JamesQuirks\obj\Debug\JamesQuirks.exe
+C:\Users\BT21112\Desktop\JamesQuirks\JamesQuirks\obj\Debug\JamesQuirks.pdb
