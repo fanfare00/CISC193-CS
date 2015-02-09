@@ -17,6 +17,7 @@ namespace JamesQuirks
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new quirkyForm());
+            
         }
     }
 }

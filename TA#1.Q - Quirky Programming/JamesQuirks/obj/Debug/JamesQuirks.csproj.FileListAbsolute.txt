@@ -16,3 +16,18 @@ C:\Users\BT21112\Desktop\CISC 193\TA#1.Q - Quirky Programming\JamesQuirks\obj\De
 C:\Users\BT21112\Desktop\CISC 193\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQuirks.quirkyForm.resources
 C:\Users\BT21112\Desktop\CISC 193\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQuirks.Properties.Resources.resources
 C:\Users\BT21112\Desktop\CISC 193\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQuirks.csproj.GenerateResource.Cache
+C:\Users\james\Desktop\CISC193-CS-master\TA#1.Q - Quirky Programming\JamesQuirks\bin\Debug\JamesQuirks.exe.config
+C:\Users\james\Desktop\CISC193-CS-master\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQuirks.exe
+C:\Users\james\Desktop\CISC193-CS-master\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQuirks.pdb
+C:\Users\james\Desktop\CISC193-CS-master\TA#1.Q - Quirky Programming\JamesQuirks\bin\Debug\JamesQuirks.exe
+C:\Users\james\Desktop\CISC193-CS-master\TA#1.Q - Quirky Programming\JamesQuirks\bin\Debug\JamesQuirks.pdb
+C:\Users\james\Desktop\CISC193-CS-master\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQuirks.csprojResolveAssemblyReference.cache
+C:\Users\james\Desktop\CISC193-CS-master\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQuirks.quirkyForm.resources
+C:\Users\james\Desktop\CISC193-CS-master\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQuirks.Properties.Resources.resources
+C:\Users\james\Desktop\CISC193-CS-master\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQuirks.csproj.GenerateResource.Cache
+C:\Users\james\Desktop\TA#1.Q - Quirky Programming\JamesQuirks\bin\Debug\JamesQuirks.exe.config
+C:\Users\james\Desktop\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQuirks.exe
+C:\Users\james\Desktop\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQuirks.pdb
+C:\Users\james\Desktop\CompSci 2015\CISC193-CS\TA#1.Q - Quirky Programming\JamesQuirks\bin\Debug\JamesQuirks.exe.config
+C:\Users\james\Desktop\CompSci 2015\CISC193-CS\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQuirks.exe
+C:\Users\james\Desktop\CompSci 2015\CISC193-CS\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQuirks.pdb
