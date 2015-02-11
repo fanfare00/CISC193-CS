@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace JamesTickTackToe
+namespace JamesTicTacToe
 {
-    public partial class Form1 : Form
+    public partial class JamesForm : Form
     {
-        public Form1()
+        public JamesForm()
         {
             InitializeComponent();
         }

@@ -1,9 +1,0 @@
-C:\Users\BT21112\Desktop\JamesTickTackToe\JamesTickTackToe\bin\Debug\JamesTickTackToe.exe.config
-C:\Users\BT21112\Desktop\CISC193-CS-master\TA#1.3 - Tick Tack Toe\JamesTickTackToe\bin\Debug\JamesTickTackToe.exe.config
-C:\Users\BT21112\Desktop\CISC193-CS-master\TA#1.3 - Tick Tack Toe\JamesTickTackToe\bin\Debug\JamesTickTackToe.exe
-C:\Users\BT21112\Desktop\CISC193-CS-master\TA#1.3 - Tick Tack Toe\JamesTickTackToe\bin\Debug\JamesTickTackToe.pdb
-C:\Users\BT21112\Desktop\CISC193-CS-master\TA#1.3 - Tick Tack Toe\JamesTickTackToe\obj\Debug\JamesTickTackToe.csprojResolveAssemblyReference.cache
-C:\Users\BT21112\Desktop\CISC193-CS-master\TA#1.3 - Tick Tack Toe\JamesTickTackToe\obj\Debug\JamesTickTackToe.Properties.Resources.resources
-C:\Users\BT21112\Desktop\CISC193-CS-master\TA#1.3 - Tick Tack Toe\JamesTickTackToe\obj\Debug\JamesTickTackToe.csproj.GenerateResource.Cache
-C:\Users\BT21112\Desktop\CISC193-CS-master\TA#1.3 - Tick Tack Toe\JamesTickTackToe\obj\Debug\JamesTickTackToe.exe
-C:\Users\BT21112\Desktop\CISC193-CS-master\TA#1.3 - Tick Tack Toe\JamesTickTackToe\obj\Debug\JamesTickTackToe.pdb

@@ -31,3 +31,6 @@ C:\Users\james\Desktop\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQu
 C:\Users\james\Desktop\CompSci 2015\CISC193-CS\TA#1.Q - Quirky Programming\JamesQuirks\bin\Debug\JamesQuirks.exe.config
 C:\Users\james\Desktop\CompSci 2015\CISC193-CS\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQuirks.exe
 C:\Users\james\Desktop\CompSci 2015\CISC193-CS\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQuirks.pdb
+C:\Users\BT21112\Desktop\CISC193-CS\TA#1.Q - Quirky Programming\JamesQuirks\bin\Debug\JamesQuirks.exe.config
+C:\Users\BT21112\Desktop\CISC193-CS\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQuirks.exe
+C:\Users\BT21112\Desktop\CISC193-CS\TA#1.Q - Quirky Programming\JamesQuirks\obj\Debug\JamesQuirks.pdb
