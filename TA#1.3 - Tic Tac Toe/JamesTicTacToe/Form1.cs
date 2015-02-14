@@ -15,6 +15,8 @@ namespace JamesTicTacToe
 {
     public partial class JamesForm : Form
     {
+        public bool hostSelected = false;
+
         private SocketManagement con;// object for connecting
 
         public bool networkGame = false;
@@ -552,7 +554,14 @@ namespace JamesTicTacToe
                 if (checkIPandPort(textBoxIP.Text, textBoxPort.Text))
                 {
                     networkGame = true;
-                    ConnectAsServer(textBoxIP.Text, Int32.Parse(textBoxPort.Text));
+                    if (isHost)
+                    {
+                        ConnectAsServer(textBoxIP.Text, Int32.Parse(textBoxPort.Text));
+                    }
+                    else
+                    {
+                        ConnectAsClient(textBoxIP.Text, Int32.Parse(textBoxPort.Text));
+                    }
                 }
                 else
                 {
