@@ -414,16 +414,16 @@ namespace JamesTicTacToe
                     SetBoardBasedOnButtonName(((PictureBox)sender).Name);
                     con.sendBoard(board);
                     player1Turn = false;
-                    checkBoardState();
+                    checkNetworkBoard();
                     CheckTurn();
                 }
                 else
                 {
-                    //SetBoardBasedOnButtonName(((PictureBox)sender).Name);
-                   // checkBoardState();
-                   // player1Turn = !player1Turn;
-                   // switchTurn();
-                   // resetBoard();
+                    SetBoardBasedOnButtonName(((PictureBox)sender).Name);
+                    checkBoardState();
+                    player1Turn = !player1Turn;
+                    switchTurn();
+                    resetBoard();
                     Close();
                 }
 
@@ -681,6 +681,19 @@ namespace JamesTicTacToe
             {
                 this.Invoke((MethodInvoker)delegate { CheckTurn(); });
             }
+        }
+
+        private void checkNetworkBoard()
+        {
+            if (!this.InvokeRequired)
+            {
+                checkBoardState();
+            }
+            else
+            {
+                this.Invoke((MethodInvoker)delegate { checkNetworkBoard(); });
+            }
+
         }
 
     ///
