@@ -377,6 +377,8 @@ namespace JamesTicTacToe
             board[Int32.Parse("" + realCodeInChar[0])][Int32.Parse("" + realCodeInChar[1])] = player1Turn ? 1 : 2;
         }
 
+
+        ///GAME BOX CLICKED
         private void gameBox_Click(object sender, MouseEventArgs e)
         {
             PictureBox clickedBox = sender as PictureBox;
@@ -386,11 +388,11 @@ namespace JamesTicTacToe
 
                 if (player1Turn)
                 {
-                    clickedBox.Image = Properties.Resources.icon_diffuse;
+                   // clickedBox.Image = Properties.Resources.icon_diffuse;
                 }
                 else
                 {
-                    clickedBox.Image = Properties.Resources.icon_bomb;
+                  //  clickedBox.Image = Properties.Resources.icon_bomb;
                 }
 
                 if (networkGame)
@@ -407,9 +409,8 @@ namespace JamesTicTacToe
                     checkBoardState();
                     player1Turn = !player1Turn;
                     switchTurn();
+                    resetBoard();
                 }
-
-
 
             }
         }
@@ -525,6 +526,7 @@ namespace JamesTicTacToe
             labelNetworkNameT.ForeColor = Color.Gray;
 
             isHost = true;
+            player1Turn = true;
         }
 
         private void pictureButtonT_Click(object sender, EventArgs e)
@@ -543,6 +545,7 @@ namespace JamesTicTacToe
             labelNetworkNameCT.ForeColor = Color.Gray;
 
             isHost = false;
+            player1Turn = false;
         }
     ///
     /// END NETWORK SETUP MENU
@@ -629,27 +632,27 @@ namespace JamesTicTacToe
             {
                 if (player1Turn && haveWinner == false)
                 {
-                    pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_alt_3;
-                    pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist_alt;
-                    labelTeamRight.ForeColor = Color.Gray;
-                    labelPlayerNameRight.ForeColor = Color.Gray;
+                    //pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_alt_3;
+                    //pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist_alt;
+                    //labelTeamRight.ForeColor = Color.Gray;
+                    //labelPlayerNameRight.ForeColor = Color.Gray;
 
-                    pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_3;
-                    pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_1;
-                    labelTeamLeft.ForeColor = Color.Gainsboro;
-                    labelPlayerNameLeft.ForeColor = Color.Gainsboro;
+                    //pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_3;
+                    //pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_1;
+                    //labelTeamLeft.ForeColor = Color.Gainsboro;
+                    //labelPlayerNameLeft.ForeColor = Color.Gainsboro;
                 }
                 else
                 {
-                    pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_alt_3;
-                    pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_alt_1;
-                    labelTeamLeft.ForeColor = Color.Gray;
-                    labelPlayerNameLeft.ForeColor = Color.Gray;
+                    //pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_alt_3;
+                    //pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_alt_1;
+                    //labelTeamLeft.ForeColor = Color.Gray;
+                    //labelPlayerNameLeft.ForeColor = Color.Gray;
 
-                    pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_3;
-                    pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist;
-                    labelTeamRight.ForeColor = Color.Gainsboro;
-                    labelPlayerNameRight.ForeColor = Color.Gainsboro;
+                    //pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_3;
+                    //pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist;
+                    //labelTeamRight.ForeColor = Color.Gainsboro;
+                    //labelPlayerNameRight.ForeColor = Color.Gainsboro;
                 }
                 resetBoard();
             }
