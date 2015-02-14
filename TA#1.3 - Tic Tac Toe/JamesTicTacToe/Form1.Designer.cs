@@ -108,13 +108,13 @@
             // panelMainMenu
             // 
             this.panelMainMenu.BackColor = System.Drawing.Color.Transparent;
+            this.panelMainMenu.Controls.Add(this.labelSelectOptions);
+            this.panelMainMenu.Controls.Add(this.labelSelectCredits);
+            this.panelMainMenu.Controls.Add(this.labelSelectPlay);
             this.panelMainMenu.Controls.Add(this.labelSelectBack);
             this.panelMainMenu.Controls.Add(this.labelSelectNetwork);
             this.panelMainMenu.Controls.Add(this.labelSelectShared);
-            this.panelMainMenu.Controls.Add(this.labelSelectOptions);
-            this.panelMainMenu.Controls.Add(this.labelSelectCredits);
             this.panelMainMenu.Controls.Add(this.labelSelectExit);
-            this.panelMainMenu.Controls.Add(this.labelSelectPlay);
             this.panelMainMenu.Location = new System.Drawing.Point(61, 233);
             this.panelMainMenu.Name = "panelMainMenu";
             this.panelMainMenu.Size = new System.Drawing.Size(220, 151);
@@ -122,14 +122,16 @@
             // 
             // labelSelectBack
             // 
-            this.labelSelectBack.Font = new System.Drawing.Font("UPBOLTERS", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSelectBack.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSelectBack.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelSelectBack.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.labelSelectBack.Location = new System.Drawing.Point(3, 101);
             this.labelSelectBack.Name = "labelSelectBack";
             this.labelSelectBack.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.labelSelectBack.Size = new System.Drawing.Size(214, 19);
             this.labelSelectBack.TabIndex = 56;
             this.labelSelectBack.Text = "BACK";
+            this.labelSelectBack.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelSelectBack.Visible = false;
             this.labelSelectBack.Click += new System.EventHandler(this.labelSelectBack_Click);
             this.labelSelectBack.MouseEnter += new System.EventHandler(this.label_Highlight);
@@ -137,15 +139,17 @@
             // 
             // labelSelectNetwork
             // 
-            this.labelSelectNetwork.Font = new System.Drawing.Font("UPBOLTERS", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSelectNetwork.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSelectNetwork.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelSelectNetwork.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.labelSelectNetwork.Location = new System.Drawing.Point(3, 74);
             this.labelSelectNetwork.Margin = new System.Windows.Forms.Padding(3);
             this.labelSelectNetwork.Name = "labelSelectNetwork";
             this.labelSelectNetwork.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.labelSelectNetwork.Size = new System.Drawing.Size(214, 18);
+            this.labelSelectNetwork.Size = new System.Drawing.Size(247, 18);
             this.labelSelectNetwork.TabIndex = 55;
             this.labelSelectNetwork.Text = "NETWORK TWO-PLAYER";
+            this.labelSelectNetwork.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelSelectNetwork.Visible = false;
             this.labelSelectNetwork.Click += new System.EventHandler(this.labelSelectNetwork_Click);
             this.labelSelectNetwork.MouseEnter += new System.EventHandler(this.label_Highlight);
@@ -153,8 +157,9 @@
             // 
             // labelSelectShared
             // 
-            this.labelSelectShared.Font = new System.Drawing.Font("UPBOLTERS", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSelectShared.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSelectShared.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelSelectShared.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.labelSelectShared.Location = new System.Drawing.Point(3, 48);
             this.labelSelectShared.Margin = new System.Windows.Forms.Padding(3);
             this.labelSelectShared.Name = "labelSelectShared";
@@ -162,6 +167,7 @@
             this.labelSelectShared.Size = new System.Drawing.Size(214, 18);
             this.labelSelectShared.TabIndex = 54;
             this.labelSelectShared.Text = "SHARED TWO-PLAYER";
+            this.labelSelectShared.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelSelectShared.Visible = false;
             this.labelSelectShared.Click += new System.EventHandler(this.labelSelectShared_Click);
             this.labelSelectShared.MouseEnter += new System.EventHandler(this.label_Highlight);
@@ -169,54 +175,62 @@
             // 
             // labelSelectOptions
             // 
-            this.labelSelectOptions.Font = new System.Drawing.Font("UPBOLTERS", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSelectOptions.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSelectOptions.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelSelectOptions.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.labelSelectOptions.Location = new System.Drawing.Point(3, 74);
             this.labelSelectOptions.Name = "labelSelectOptions";
             this.labelSelectOptions.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.labelSelectOptions.Size = new System.Drawing.Size(214, 19);
+            this.labelSelectOptions.Size = new System.Drawing.Size(247, 19);
             this.labelSelectOptions.TabIndex = 52;
             this.labelSelectOptions.Text = "HELP AND OPTIONS";
+            this.labelSelectOptions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelSelectOptions.MouseEnter += new System.EventHandler(this.label_Highlight);
             this.labelSelectOptions.MouseLeave += new System.EventHandler(this.label_Unhighlight);
             // 
             // labelSelectCredits
             // 
-            this.labelSelectCredits.Font = new System.Drawing.Font("UPBOLTERS", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSelectCredits.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSelectCredits.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelSelectCredits.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.labelSelectCredits.Location = new System.Drawing.Point(3, 101);
             this.labelSelectCredits.Name = "labelSelectCredits";
             this.labelSelectCredits.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.labelSelectCredits.Size = new System.Drawing.Size(214, 19);
+            this.labelSelectCredits.Size = new System.Drawing.Size(247, 19);
             this.labelSelectCredits.TabIndex = 51;
             this.labelSelectCredits.Text = "CREDITS";
+            this.labelSelectCredits.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelSelectCredits.MouseEnter += new System.EventHandler(this.label_Highlight);
             this.labelSelectCredits.MouseLeave += new System.EventHandler(this.label_Unhighlight);
             // 
             // labelSelectExit
             // 
-            this.labelSelectExit.Font = new System.Drawing.Font("UPBOLTERS", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSelectExit.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSelectExit.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelSelectExit.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.labelSelectExit.Location = new System.Drawing.Point(3, 127);
             this.labelSelectExit.Name = "labelSelectExit";
             this.labelSelectExit.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.labelSelectExit.Size = new System.Drawing.Size(214, 19);
             this.labelSelectExit.TabIndex = 53;
             this.labelSelectExit.Text = "EXIT GAME";
+            this.labelSelectExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelSelectExit.MouseEnter += new System.EventHandler(this.label_Highlight);
             this.labelSelectExit.MouseLeave += new System.EventHandler(this.label_Unhighlight);
             // 
             // labelSelectPlay
             // 
-            this.labelSelectPlay.Font = new System.Drawing.Font("UPBOLTERS", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSelectPlay.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSelectPlay.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelSelectPlay.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
             this.labelSelectPlay.Location = new System.Drawing.Point(3, 48);
             this.labelSelectPlay.Margin = new System.Windows.Forms.Padding(3);
             this.labelSelectPlay.Name = "labelSelectPlay";
             this.labelSelectPlay.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.labelSelectPlay.Size = new System.Drawing.Size(214, 18);
+            this.labelSelectPlay.Size = new System.Drawing.Size(247, 18);
             this.labelSelectPlay.TabIndex = 49;
             this.labelSelectPlay.Text = "PLAY";
+            this.labelSelectPlay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelSelectPlay.Click += new System.EventHandler(this.labelSelectPlay_Click);
             this.labelSelectPlay.MouseEnter += new System.EventHandler(this.label_Highlight);
             this.labelSelectPlay.MouseLeave += new System.EventHandler(this.label_Unhighlight);
