@@ -395,7 +395,11 @@ namespace JamesTicTacToe
 
                 if (networkGame)
                 {
+                    SetBoardBasedOnButtonName(((PictureBox)sender).Name);
+                    con.sendBoard(board);
                     player1Turn = false;
+                    checkBoardState();
+                    CheckTurn();
                 }
                 else
                 {
