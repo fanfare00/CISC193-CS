@@ -52,6 +52,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SocketManagement.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -63,6 +64,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -76,6 +78,120 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CM_Deathpulse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\label_back_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\label_back_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\label_back_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panel_back_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panel_back_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\form_back_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\form_back_alt_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panel_back_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panel_back_4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panel_back_5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\form_back_alt_2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\form_back_alt_3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panel_back_6.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panel_back_7.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panel_back_8.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_diffuse.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_bomb.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picture_back_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\score_back_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_couterterrorist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_terrorist.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\portrait_CT_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\portrait_terrorist_1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\portrait_terrorist_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\portrait_terrorist_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\portrait_CT_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\panel_lower_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_CT_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_terrorist_alt.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_CT_alt_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\portrait_CT_alt_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\portrait_terrorist_alt_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clear.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_back_green.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_back_green_alt_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_back_green_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\button_back_gray.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
