@@ -409,7 +409,7 @@ namespace JamesTicTacToe
                 //  //  clickedBox.Image = Properties.Resources.icon_bomb;
                 //}
 
-                if (networkGame)
+                if ((networkGame) && (player1Turn))
                 {
 
                     SetBoardBasedOnButtonName(((PictureBox)sender).Name);
