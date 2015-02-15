@@ -21,6 +21,7 @@ namespace JamesTicTacToe
 
         public bool networkGame = false;
         public bool isHost = false;
+        public bool isMyTurn = false;
         public bool canStart = false;
 
         public bool player1Turn = true;
@@ -157,7 +158,7 @@ namespace JamesTicTacToe
         {
             if (networkGame)
             {
-                player1Turn = isHost;
+                isMyTurn = isHost;
             }
 
             timerClock.Start();
@@ -350,39 +351,39 @@ namespace JamesTicTacToe
         /// END GAME BOARD LOGIC
         ////////////////////////////////////////////////////////////////////////
 
-        private void switchTurn()
-        {
-            if (haveWinner)
-            {
-                return;
-            }
+        //private void switchTurn()
+        //{
+        //    if (haveWinner)
+        //    {
+        //        return;
+        //    }
 
-            if (player1Turn == true)
-            {
-                pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_alt_3;
-                pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist_alt;
-                labelTeamRight.ForeColor = Color.Gray;
-                labelPlayerNameRight.ForeColor = Color.Gray;
+        //    if (player1Turn == true)
+        //    {
+        //        pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_alt_3;
+        //        pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist_alt;
+        //        labelTeamRight.ForeColor = Color.Gray;
+        //        labelPlayerNameRight.ForeColor = Color.Gray;
 
-                pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_3;
-                pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_1;
-                labelTeamLeft.ForeColor = Color.Gainsboro;
-                labelPlayerNameLeft.ForeColor = Color.Gainsboro;
+        //        pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_3;
+        //        pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_1;
+        //        labelTeamLeft.ForeColor = Color.Gainsboro;
+        //        labelPlayerNameLeft.ForeColor = Color.Gainsboro;
 
-            }
-            else
-            {
-                pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_alt_3;
-                pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_alt_1;
-                labelTeamLeft.ForeColor = Color.Gray;
-                labelPlayerNameLeft.ForeColor = Color.Gray;
+        //    }
+        //    else
+        //    {
+        //        pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_alt_3;
+        //        pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_alt_1;
+        //        labelTeamLeft.ForeColor = Color.Gray;
+        //        labelPlayerNameLeft.ForeColor = Color.Gray;
 
-                pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_3;
-                pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist;
-                labelTeamRight.ForeColor = Color.Gainsboro;
-                labelPlayerNameRight.ForeColor = Color.Gainsboro;
-            }
-        }
+        //        pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_3;
+        //        pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist;
+        //        labelTeamRight.ForeColor = Color.Gainsboro;
+        //        labelPlayerNameRight.ForeColor = Color.Gainsboro;
+        //    }
+        //}
 
         private void SetBoardBasedOnButtonName(string code)
         {
@@ -409,22 +410,22 @@ namespace JamesTicTacToe
                 //  //  clickedBox.Image = Properties.Resources.icon_bomb;
                 //}
 
-                if ((networkGame) && (player1Turn))
+                if ((networkGame) && (isMyTurn))
                 {
 
                     SetBoardBasedOnButtonName(((PictureBox)sender).Name);
                     con.sendBoard(board);
-                    player1Turn = false;
-                    checkNetworkBoard();
+                    isMyTurn = false;
+                    //checkNetworkBoard();
                     CheckTurn();
                 }
                 else
                 {
-                    SetBoardBasedOnButtonName(((PictureBox)sender).Name);
-                    checkBoardState();
-                    player1Turn = !player1Turn;
-                    switchTurn();
-                    resetBoard();
+                    //SetBoardBasedOnButtonName(((PictureBox)sender).Name);
+                    //checkBoardState();
+                    //player1Turn = !player1Turn;
+                    //switchTurn();
+                    //resetBoard();
                 }
 
             }
@@ -433,26 +434,26 @@ namespace JamesTicTacToe
         private void timerNextRound_Tick(object sender, EventArgs e)
         {
 
-            timerNextRound.Stop();
-            panelRoundWinner.Show();
+        //    timerNextRound.Stop();
+        //    panelRoundWinner.Show();
 
-            for (int i = 0; i < 3; i++)
-            {
-                for (int k = 0; k < 3; k++)
-                {
-                    board[i][k] = 0;
-                }
+        //    for (int i = 0; i < 3; i++)
+        //    {
+        //        for (int k = 0; k < 3; k++)
+        //        {
+        //            board[i][k] = 0;
+        //        }
 
-            }
+        //    }
 
-            player1Win = false;
-            player2Win = false;
-            haveWinner = false;
-            player1Turn = true;
+        //    player1Win = false;
+        //    player2Win = false;
+        //    haveWinner = false;
+        //    player1Turn = true;
 
-            clock.Restart();
-            resetBoard();
-            switchTurn();
+        //    clock.Restart();
+        //    resetBoard();
+        //    switchTurn();
         }
 
         private void timerClock_Tick(object sender, EventArgs e)
@@ -541,7 +542,7 @@ namespace JamesTicTacToe
             labelNetworkNameT.ForeColor = Color.Gray;
 
             isHost = true;
-            player1Turn = true;
+            isMyTurn = true;
         }
 
         private void pictureButtonT_Click(object sender, EventArgs e)
@@ -560,7 +561,7 @@ namespace JamesTicTacToe
             labelNetworkNameCT.ForeColor = Color.Gray;
 
             isHost = false;
-            player1Turn = false;
+            isMyTurn = false;
         }
     ///
     /// END NETWORK SETUP MENU
@@ -635,7 +636,7 @@ namespace JamesTicTacToe
             Task.Factory.StartNew(() =>
             {
                 board = con.getBoard();
-                player1Turn = true;
+                isMyTurn = true;
                 checkNetworkBoard();
                 CheckTurn();
             });
@@ -645,7 +646,7 @@ namespace JamesTicTacToe
         {
             if (!this.InvokeRequired)
             {
-                if (player1Turn && haveWinner == false)
+                if (isMyTurn && haveWinner == false)
                 {
                     SetEnabled(true);
 
@@ -687,7 +688,7 @@ namespace JamesTicTacToe
         {
             if (!this.InvokeRequired)
             {
-                checkBoardState();
+               // checkBoardState();
             }
             else
             {
