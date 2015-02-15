@@ -15,6 +15,8 @@ namespace JamesTicTacToe
 {
     public partial class JamesForm : Form
     {
+       
+
         public bool hostSelected = false;
 
         private SocketManagement con;// object for connecting
@@ -398,6 +400,8 @@ namespace JamesTicTacToe
         {
             PictureBox clickedBox = sender as PictureBox;
 
+            labelTeamLeft.Text = isMyTurn.ToString();
+
             if ((clickedBox.Image == null) && (haveWinner == false))
             {
 
@@ -650,29 +654,29 @@ namespace JamesTicTacToe
                 {
                     SetEnabled(true);
 
-                    pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_alt_3;
-                    pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist_alt;
-                    labelTeamRight.ForeColor = Color.Gray;
-                    labelPlayerNameRight.ForeColor = Color.Gray;
+                    //pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_alt_3;
+                    //pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist_alt;
+                    //labelTeamRight.ForeColor = Color.Gray;
+                    //labelPlayerNameRight.ForeColor = Color.Gray;
 
-                    pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_3;
-                    pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_1;
-                    labelTeamLeft.ForeColor = Color.Gainsboro;
-                    labelPlayerNameLeft.ForeColor = Color.Gainsboro;
+                    //pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_3;
+                    //pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_1;
+                    //labelTeamLeft.ForeColor = Color.Gainsboro;
+                    //labelPlayerNameLeft.ForeColor = Color.Gainsboro;
                 }
                 else
                 {
                     SetEnabled(false);
 
-                    pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_alt_3;
-                    pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_alt_1;
-                    labelTeamLeft.ForeColor = Color.Gray;
-                    labelPlayerNameLeft.ForeColor = Color.Gray;
+                    //pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_alt_3;
+                    //pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_alt_1;
+                    //labelTeamLeft.ForeColor = Color.Gray;
+                    //labelPlayerNameLeft.ForeColor = Color.Gray;
 
-                    pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_3;
-                    pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist;
-                    labelTeamRight.ForeColor = Color.Gainsboro;
-                    labelPlayerNameRight.ForeColor = Color.Gainsboro;
+                    //pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_3;
+                    //pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist;
+                    //labelTeamRight.ForeColor = Color.Gainsboro;
+                    //labelPlayerNameRight.ForeColor = Color.Gainsboro;
 
                     GetDataFromOthers();
                 }

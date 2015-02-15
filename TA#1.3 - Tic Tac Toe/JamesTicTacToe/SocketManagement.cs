@@ -64,6 +64,8 @@ namespace JamesTicTacToe
                 byte[] bytes = new byte[255];
                 bytes = new ASCIIEncoding().GetBytes(temp);
                 _STREAM.Write(bytes, 0, bytes.Length);
+
+                System.Windows.Forms.MessageBox.Show("SENT" + obj[0][0].ToString());
             }
             catch (Exception ex) { System.Windows.Forms.MessageBox.Show(ex.Message); return false; }
             return true;
@@ -80,6 +82,8 @@ namespace JamesTicTacToe
             for (int y = 0; y < 3; y++)
                 for (int x = 0; x < 3; x++)
                     obj[y][x] = Int32.Parse("" + charOfTemp[(y * 3) + x]);
+
+            System.Windows.Forms.MessageBox.Show("GOT" + obj[0][0].ToString());
             return obj;
         }
     }
