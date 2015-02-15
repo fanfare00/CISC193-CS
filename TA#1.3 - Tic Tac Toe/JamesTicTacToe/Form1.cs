@@ -23,12 +23,11 @@ namespace JamesTicTacToe
 
         public bool networkGame = false;
         public bool isHost = false;
-        public bool isMyTurn = false;
+        public bool isMyTurn = true;
         public bool canStart = false;
 
-        public bool player1Turn = true;
-        public bool player1Win = false;
-        public bool player2Win = false;
+
+        public bool isWinner = false;
 
         private int[][] board = { new int[] { 0, 0, 0 }, new int[] { 0, 0, 0 }, new int[] { 0, 0, 0 } };// 0=netral, 1=server, 2=clint
         private Image[] mapping = { null, Properties.Resources.icon_diffuse, Properties.Resources.icon_bomb };
@@ -45,9 +44,9 @@ namespace JamesTicTacToe
         {
             InitializeComponent();
 
-            clock.Start();
+            //clock.Start();
 
-            resetBoard();
+            //resetBoard();
             buttonScoreT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             buttonScoreCT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             buttonClock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -163,7 +162,13 @@ namespace JamesTicTacToe
             //    isMyTurn = isHost;
             //}
 
-           // timerClock.Start();
+            timerClock.Start();
+
+            if (networkGame)
+            {
+                checkTurn();
+            }
+            
 
             panelMainMenu.Hide();
             panelNetworkSetup.Hide();
@@ -214,138 +219,122 @@ namespace JamesTicTacToe
         ////////////////////////////////////////////////////////////////////////
         private void checkBoardState()
         {
-            // VERTICAL WIN CHECK
-            if (board[0][0] != 0 && board[0][1] != 0 && board[0][1] != 0 && board[0][0] == board[0][1] && board[0][1] == board[0][2] && board[0][0] == board[0][2])
+            if (!this.InvokeRequired)
             {
-                // VERTICAL ROW 0 CHECK
-                haveWinner = true;
-                if (player1Turn && board[0][0] == 1)
+                // VERTICAL WIN CHECK
+                if (board[0][0] != 0 && board[0][1] != 0 && board[0][1] != 0 && board[0][0] == board[0][1] && board[0][1] == board[0][2] && board[0][0] == board[0][2])
                 {
-                    player1Win = true;
-                }
-                else if (!player1Turn && board[0][0] == 2)
-                {
-                    player2Win = true;
-                }
-            }
-            else if (board[1][0] != 0 && board[1][1] != 0 && board[1][1] != 0 && board[1][0] == board[1][1] && board[1][1] == board[1][2] && board[1][0] == board[1][2])
-            {
-                // VERTICAL ROW 1 CHECK
-                haveWinner = true;
-                if (player1Turn && board[1][0] == 1)
-                {
-                    player1Win = true;
-                }
-                else if (!player1Turn && board[1][0] == 2)
-                {
-                    player2Win = true;
-                }
-            }
-            else if (board[2][0] != 0 && board[2][1] != 0 && board[2][1] != 0 && board[2][0] == board[2][1] && board[2][1] == board[2][2] && board[2][0] == board[2][2])
-            {
-                // VERTICAL ROW 2 CHECK
-                haveWinner = true;
-                if (player1Turn && board[2][0] == 1)
-                {
-                    player1Win = true;
-                }
-                else if (!player1Turn && board[2][0] == 2)
-                {
-                    player2Win = true;
-                }
-            }
-            // HORIZONTAL WIN CHECK
-            else if (board[0][0] != 0 && board[1][0] != 0 && board[2][0] != 0 && board[0][0] == board[1][0] && board[1][0] == board[2][0] && board[0][0] == board[2][0])
-            {
-                // HORIZONTAL ROW 0 CHECK
-                haveWinner = true;
-                if (player1Turn && board[0][0] == 1)
-                {
-                    player1Win = true;
-                }
-                else if (!player1Turn && board[0][0] == 2)
-                {
-                    player2Win = true;
-                }
-            }
-            else if (board[0][1] != 0 && board[1][1] != 0 && board[2][1] != 0 && board[0][1] == board[1][1] && board[1][1] == board[2][1] && board[0][1] == board[2][1])
-            {
-                // HORIZONTAL ROW 1 CHECK
-                haveWinner = true;
-                if (player1Turn && board[0][1] == 1)
-                {
-                    player1Win = true;
-                }
-                else if (!player1Turn && board[0][1] == 2)
-                {
-                    player2Win = true;
-                }
-            }
-            else if (board[0][2] != 0 && board[1][2] != 0 && board[2][2] != 0 && board[0][2] == board[1][2] && board[1][2] == board[2][2] && board[0][2] == board[2][2])
-            {
-                // HORIZONTAL ROW 2 CHECK
-                haveWinner = true;
-                if (player1Turn && board[0][2] == 1)
-                {
-                    player1Win = true;
-                }
-                else if (!player1Turn && board[0][2] == 2)
-                {
-                    player2Win = true;
-                }
-            }
-            // DIAGONAL WIN CHECK
-            else if (board[0][0] != 0 && board[1][1] != 0 && board[2][2] != 0 && board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] == board[2][2])
-            {
-                // DIAGoNAL LEFT-RIGHT CHECK
-                haveWinner = true;
-                if (player1Turn && board[0][0] == 1)
-                {
-                    player1Win = true;
-                }
-                else if (!player1Turn && board[0][0] == 2)
-                {
-                    player2Win = true;
-                }
-            }
-            else if (board[0][2] != 0 && board[1][1] != 0 && board[2][0] != 0 && board[2][0] == board[1][1] && board[1][1] == board[0][2] && board[2][0] == board[0][2])
-            {
-                // DIAGONAL RIGHT-LEFT CHECK
-                haveWinner = true;
-                if (player1Turn && board[1][1] == 1)
-                {
-                    player1Win = true;
-                }
-                else if (!player1Turn && board[1][1] == 2)
-                {
-                    player2Win = true;
-                }
-            }
+                    // VERTICAL ROW 0 CHECK
+                    haveWinner = true;
+                    if ((isHost && board[0][0] == 1) || (!isHost && board[0][0] == 2))
+                    {
+                        isWinner = true;
+                    }
 
-            if (haveWinner)
-            {
-                timerNextRound.Start();
-                clock.Restart();
-                //buttonClock.ForeColor = Color.Red;
-
-                // Array.Clear(board, 0, board.Length);
-
-                if (player1Win)
-                {
-                    scoreCT += 1;
-                    labelRoundWinner.Text = "Counter-Terrorists Win";
-                    pictureBoxWinningTeam.Image = Properties.Resources.icon_CT_1;
-                    panelRoundWinner.Show();
-                    buttonScoreCT.Text = scoreCT.ToString();
 
                 }
-                else
+                else if (board[1][0] != 0 && board[1][1] != 0 && board[1][1] != 0 && board[1][0] == board[1][1] && board[1][1] == board[1][2] && board[1][0] == board[1][2])
                 {
-                    scoreT += 1;
-                    labelRoundWinner.Text = "Terrorists Win";
-                    pictureBoxWinningTeam.Image = Properties.Resources.icon_terrorist;
-                    panelRoundWinner.Show();
-                    buttonScoreT.Text = scoreT.ToString();
+                    // VERTICAL ROW 1 CHECK
+                    haveWinner = true;
+                    if ((isHost && board[1][0] == 1) || (!isHost && board[1][0] == 2))
+                    {
+                        isWinner = true;
+                    }
+
+
+                }
+                else if (board[2][0] != 0 && board[2][1] != 0 && board[2][1] != 0 && board[2][0] == board[2][1] && board[2][1] == board[2][2] && board[2][0] == board[2][2])
+                {
+                    // VERTICAL ROW 2 CHECK
+                    haveWinner = true;
+                    if ((isHost && board[2][0] == 1) || (!isHost && board[2][0] == 2))
+                    {
+                        isWinner = true;
+                    }
+
+
+                }
+                // HORIZONTAL WIN CHECK
+                else if (board[0][0] != 0 && board[1][0] != 0 && board[2][0] != 0 && board[0][0] == board[1][0] && board[1][0] == board[2][0] && board[0][0] == board[2][0])
+                {
+                    // HORIZONTAL ROW 0 CHECK
+                    haveWinner = true;
+                    if ((isHost && board[0][0] == 1) || (!isHost && board[0][0] == 2))
+                    {
+                        isWinner = true;
+                    }
+
+
+                }
+                else if (board[0][1] != 0 && board[1][1] != 0 && board[2][1] != 0 && board[0][1] == board[1][1] && board[1][1] == board[2][1] && board[0][1] == board[2][1])
+                {
+                    // HORIZONTAL ROW 1 CHECK
+                    haveWinner = true;
+                    if ((isHost && board[0][1] == 1) || (!isHost && board[0][1] == 2))
+                    {
+                        isWinner = true;
+                    }
+
+
+                }
+                else if (board[0][2] != 0 && board[1][2] != 0 && board[2][2] != 0 && board[0][2] == board[1][2] && board[1][2] == board[2][2] && board[0][2] == board[2][2])
+                {
+                    // HORIZONTAL ROW 2 CHECK
+                    haveWinner = true;
+                    if ((isHost && board[0][2] == 1) || (!isHost && board[0][2] == 2))
+                    {
+                        isWinner = true;
+                    }
+
+
+                }
+                // DIAGONAL WIN CHECK
+                else if (board[0][0] != 0 && board[1][1] != 0 && board[2][2] != 0 && board[0][0] == board[1][1] && board[1][1] == board[2][2] && board[0][0] == board[2][2])
+                {
+                    // DIAGONAL LEFT-RIGHT CHECK
+                    haveWinner = true;
+                    if ((isHost && board[0][0] == 1) || (!isHost && board[0][0] == 2))
+                    {
+                        isWinner = true;
+                    }
+
+                }
+                else if (board[0][2] != 0 && board[1][1] != 0 && board[2][0] != 0 && board[2][0] == board[1][1] && board[1][1] == board[0][2] && board[2][0] == board[0][2])
+                {
+                    // DIAGONAL RIGHT-LEFT CHECK
+                    haveWinner = true;
+                    if ((isHost && board[1][1] == 1) || (!isHost && board[1][1] == 2))
+                    {
+                        isWinner = true;
+                    }
+                }
+
+                if (haveWinner)
+                {
+                    timerNextRound.Start();
+                    clock.Restart();
+                    buttonClock.ForeColor = Color.Red;
+
+                    //ray.Clear(board, 0, board.Length);
+
+                    if ((isWinner) && (isHost))
+                    {
+                        scoreCT += 1;
+                        labelRoundWinner.Text = "Counter-Terrorists Win";
+                        pictureBoxWinningTeam.Image = Properties.Resources.icon_CT_1;
+                        panelRoundWinner.Show();
+                        buttonScoreCT.Text = scoreCT.ToString();
+
+                    }
+                    else if (isWinner)
+                    {
+                        scoreT += 1;
+                        labelRoundWinner.Text = "Terrorists Win";
+                        pictureBoxWinningTeam.Image = Properties.Resources.icon_terrorist;
+                        panelRoundWinner.Show();
+                        buttonScoreT.Text = scoreT.ToString();
+                    }
                 }
             }
         }
@@ -353,115 +342,114 @@ namespace JamesTicTacToe
         /// END GAME BOARD LOGIC
         ////////////////////////////////////////////////////////////////////////
 
-        //private void switchTurn()
-        //{
-        //    if (haveWinner)
-        //    {
-        //        return;
-        //    }
-
-        //    if (player1Turn == true)
-        //    {
-        //        pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_alt_3;
-        //        pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist_alt;
-        //        labelTeamRight.ForeColor = Color.Gray;
-        //        labelPlayerNameRight.ForeColor = Color.Gray;
-
-        //        pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_3;
-        //        pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_1;
-        //        labelTeamLeft.ForeColor = Color.Gainsboro;
-        //        labelPlayerNameLeft.ForeColor = Color.Gainsboro;
-
-        //    }
-        //    else
-        //    {
-        //        pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_alt_3;
-        //        pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_alt_1;
-        //        labelTeamLeft.ForeColor = Color.Gray;
-        //        labelPlayerNameLeft.ForeColor = Color.Gray;
-
-        //        pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_3;
-        //        pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist;
-        //        labelTeamRight.ForeColor = Color.Gainsboro;
-        //        labelPlayerNameRight.ForeColor = Color.Gainsboro;
-        //    }
-        //}
-
-        private void SetBoardBasedOnButtonName(string code)
+        private void setBoardBasedOnBoxName(string code)
         {
             // 0=netral, 1=server, 2=clint
             char[] realCodeInChar = code.Substring(1).ToCharArray();
-            board[Int32.Parse("" + realCodeInChar[0])][Int32.Parse("" + realCodeInChar[1])] = player1Turn ? 1 : 2;
+            board[Int32.Parse("" + realCodeInChar[0])][Int32.Parse("" + realCodeInChar[1])] = isHost ? 1 : 2;
         }
 
 
         ///GAME BOX CLICKED
         private void gameBox_Click(object sender, MouseEventArgs e)
         {
-            PictureBox clickedBox = sender as PictureBox;
+            PictureBox clickedBox = sender as PictureBox;   
 
-            labelTeamLeft.Text = isMyTurn.ToString();
-
-            if ((networkGame) && (isMyTurn)) // && (haveWinner == false)
+            if ((isMyTurn) && (!haveWinner))
             {
                 if ((clickedBox.Image == null))
                 {
-                    SetBoardBasedOnButtonName(((PictureBox)sender).Name);
-                    con.sendBoard(board);
-                    isMyTurn = false;
-                    //checkNetworkBoard();
-                    CheckTurn();
+                    if (networkGame)
+                    {
+                        setBoardBasedOnBoxName(((PictureBox)sender).Name);
+                        swapPlayerHighlight();
+                        con.sendBoard(board);
+                        isMyTurn = false;
+                        checkBoardState();
+                        checkTurn();
+                    }
+                    else
+                    {
+                        
+                        isHost = !isHost;
 
-                    //if (player1Turn)
-                    //{
-                    //   // clickedBox.Image = Properties.Resources.icon_diffuse;
-                    //}
-                    //else
-                    //{
-                    //  //  clickedBox.Image = Properties.Resources.icon_bomb;
-                    //
+                        setBoardBasedOnBoxName(((PictureBox)sender).Name);
+                        checkBoardState();
+                        swapPlayerHighlight();
+                        
+                        resetBoard();
+                    }
                 }
             }
+        }
+
+        private void swapPlayerHighlight()
+        {
+            if (haveWinner)
+            {
+                return;
+            }
+
+            if (isHost)
+            {
+                pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_alt_3;
+                pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_alt_1;
+                labelTeamLeft.ForeColor = Color.Gray;
+                labelPlayerNameLeft.ForeColor = Color.Gray;
+
+                pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_3;
+                pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist;
+                labelTeamRight.ForeColor = Color.Gainsboro;
+                labelPlayerNameRight.ForeColor = Color.Gainsboro;
+            }
+            else
+            {
 
 
 
+                pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_alt_3;
+                pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist_alt;
+                labelTeamRight.ForeColor = Color.Gray;
+                labelPlayerNameRight.ForeColor = Color.Gray;
 
-              //  }
-             //   else
-              //  {
-                    //SetBoardBasedOnButtonName(((PictureBox)sender).Name);
-                    //checkBoardState();
-                    //player1Turn = !player1Turn;
-                    //switchTurn();
-                    //resetBoard();
-               // }
-
-           // }
+                pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_3;
+                pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_1;
+                labelTeamLeft.ForeColor = Color.Gainsboro;
+                labelPlayerNameLeft.ForeColor = Color.Gainsboro;
+            }
+            
         }
 
         private void timerNextRound_Tick(object sender, EventArgs e)
         {
 
-        //    timerNextRound.Stop();
-        //    panelRoundWinner.Show();
+            timerNextRound.Stop();
+            panelRoundWinner.Hide();
 
-        //    for (int i = 0; i < 3; i++)
-        //    {
-        //        for (int k = 0; k < 3; k++)
-        //        {
-        //            board[i][k] = 0;
-        //        }
+            for (int i = 0; i < 3; i++)
+            {
+                for (int k = 0; k < 3; k++)
+                {
+                    board[i][k] = 0;
+                }
 
-        //    }
+            }
 
-        //    player1Win = false;
-        //    player2Win = false;
-        //    haveWinner = false;
-        //    player1Turn = true;
+            haveWinner = false;
+     
+            clock.Restart();
+            resetBoard();
+            
 
-        //    clock.Restart();
-        //    resetBoard();
-        //    switchTurn();
+            if (networkGame)
+            {
+
+            }
+            else
+            {
+                isHost = !isHost;
+                swapPlayerHighlight();
+            }
         }
 
         private void timerClock_Tick(object sender, EventArgs e)
@@ -637,73 +625,40 @@ namespace JamesTicTacToe
             }
         }
 
-
-
         private void GetDataFromOthers()
         {
             Task.Factory.StartNew(() =>
             {
                 board = con.getBoard();
                 isMyTurn = true;
-                checkNetworkBoard();
-                CheckTurn();
+                checkBoardState();
+                checkTurn();
             });
         }
 
-        private void CheckTurn()
+        private void checkTurn()
         {
             if (!this.InvokeRequired)
             {
-                if (isMyTurn) // && haveWinner == false
+                if (isMyTurn && !haveWinner)
                 {
-                   // SetEnabled(true);
+                    SetEnabled(true);
 
-                    //pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_alt_3;
-                    //pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist_alt;
-                    //labelTeamRight.ForeColor = Color.Gray;
-                    //labelPlayerNameRight.ForeColor = Color.Gray;
-
-                    //pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_3;
-                    //pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_1;
-                    //labelTeamLeft.ForeColor = Color.Gainsboro;
-                    //labelPlayerNameLeft.ForeColor = Color.Gainsboro;
                 }
                 else
                 {
-                   // SetEnabled(false);
-
-                    //pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_alt_3;
-                    //pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_alt_1;
-                    //labelTeamLeft.ForeColor = Color.Gray;
-                    //labelPlayerNameLeft.ForeColor = Color.Gray;
-
-                    //pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_3;
-                    //pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist;
-                    //labelTeamRight.ForeColor = Color.Gainsboro;
-                    //labelPlayerNameRight.ForeColor = Color.Gainsboro;
-
+                    SetEnabled(false);
+     
                     GetDataFromOthers();
                 }
                 resetBoard();
             }
             else
             {
-                this.Invoke((MethodInvoker)delegate { CheckTurn(); });
+                this.Invoke((MethodInvoker)delegate { checkTurn(); });
             }
         }
 
-        private void checkNetworkBoard()
-        {
-            if (!this.InvokeRequired)
-            {
-               // checkBoardState();
-            }
-            else
-            {
-                this.Invoke((MethodInvoker)delegate { checkNetworkBoard(); });
-            }
-
-        }
 
     ///
     /// END NETWORK SETUP MENU
