@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>csgo.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -192,6 +195,13 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\button_back_gray.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="csgo.ico" />
+    <None Include="Resources\loader_animation.gif" />
+    <None Include="Resources\loader_animated.gif" />
+    <None Include="Resources\ajax-loader.gif" />
+    <None Include="Resources\PleaseWait.gif" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

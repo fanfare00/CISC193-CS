@@ -19,3 +19,12 @@ C:\Users\james\Desktop\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacT
 C:\Users\james\Desktop\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\obj\Debug\JamesTicTacToe.JamesForm.resources
 C:\Users\james\Desktop\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\obj\Debug\JamesTicTacToe.Properties.Resources.resources
 C:\Users\james\Desktop\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\obj\Debug\JamesTicTacToe.csproj.GenerateResource.Cache
+C:\Users\james\Documents\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\bin\Debug\JamesTicTacToe.exe.config
+C:\Users\james\Documents\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\obj\Debug\JamesTicTacToe.exe
+C:\Users\james\Documents\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\obj\Debug\JamesTicTacToe.pdb
+C:\Users\james\Documents\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\bin\Debug\JamesTicTacToe.exe
+C:\Users\james\Documents\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\bin\Debug\JamesTicTacToe.pdb
+C:\Users\james\Documents\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\obj\Debug\JamesTicTacToe.csprojResolveAssemblyReference.cache
+C:\Users\james\Documents\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\obj\Debug\JamesTicTacToe.JamesForm.resources
+C:\Users\james\Documents\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\obj\Debug\JamesTicTacToe.Properties.Resources.resources
+C:\Users\james\Documents\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\obj\Debug\JamesTicTacToe.csproj.GenerateResource.Cache

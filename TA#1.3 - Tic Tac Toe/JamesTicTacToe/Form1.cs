@@ -45,7 +45,7 @@ namespace JamesTicTacToe
             InitializeComponent();
 
             //clock.Start();
-
+            
             //resetBoard();
             buttonScoreT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             buttonScoreCT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -162,11 +162,18 @@ namespace JamesTicTacToe
             //    isMyTurn = isHost;
             //}
 
+            timerWaiting.Start();
             timerClock.Start();
+            clock.Start();
+            labelWaitingCT.Visible = true;
 
             if (networkGame)
             {
                 checkTurn();
+            }
+            else
+            {
+
             }
             
 
@@ -316,28 +323,81 @@ namespace JamesTicTacToe
                     clock.Restart();
                     buttonClock.ForeColor = Color.Red;
 
-                    //ray.Clear(board, 0, board.Length);
 
-                    if ((isWinner) && (isHost))
+                    if (networkGame)
                     {
-                        scoreCT += 1;
-                        labelRoundWinner.Text = "Counter-Terrorists Win";
-                        pictureBoxWinningTeam.Image = Properties.Resources.icon_CT_1;
-                        panelRoundWinner.Show();
-                        buttonScoreCT.Text = scoreCT.ToString();
+                        //if the winner is CT, display CT won message on both apps, if they are T display the T won message
 
+                        if (isWinner)
+                        {
+                            if (isHost)
+                            {
+                                // if isWinner = true and user is host(CT), display CT won message
+                                scoreCT += 1;
+                                labelRoundWinner.Text = "Counter-Terrorists Win";
+                                pictureBoxWinningTeam.Image = Properties.Resources.icon_CT_1;
+                            }
+                            else
+                            {
+                                // if isWinner = true and user is client(T), display T won message
+                                scoreT += 1;
+                                labelRoundWinner.Text = "Terrorists Win";
+                                pictureBoxWinningTeam.Image = Properties.Resources.icon_terrorist;
+                            }
+                        }
+                        else
+                        {
+                            // if isWinner = false and user is host(CT), display T won message
+                            if (isHost)
+                            {
+                                scoreT += 1;
+                                labelRoundWinner.Text = "Terrorists Win";
+                                pictureBoxWinningTeam.Image = Properties.Resources.icon_terrorist;
+                            }
+                            // if isWinner = false and user is client(T), display CT won message
+                            else
+                            {
+                                scoreCT += 1;
+                                labelRoundWinner.Text = "Counter-Terrorists Win";
+                                pictureBoxWinningTeam.Image = Properties.Resources.icon_CT_1;
+                            }
+                        }
                     }
-                    else if (isWinner)
+                    else
                     {
-                        scoreT += 1;
-                        labelRoundWinner.Text = "Terrorists Win";
-                        pictureBoxWinningTeam.Image = Properties.Resources.icon_terrorist;
-                        panelRoundWinner.Show();
-                        buttonScoreT.Text = scoreT.ToString();
+                        if ((isWinner) && (isHost))
+                        {
+                            scoreCT += 1;
+                            labelRoundWinner.Text = "Counter-Terrorists Win";
+                            pictureBoxWinningTeam.Image = Properties.Resources.icon_CT_1;
+                            swapPlayerHighlight();
+                            
+
+                        }
+                        else if (isWinner)
+                        {
+                            scoreT += 1;
+                            labelRoundWinner.Text = "Terrorists Win";
+                            pictureBoxWinningTeam.Image = Properties.Resources.icon_terrorist;
+                            swapPlayerHighlight();
+                            
+                        }
                     }
+
+                    panelRoundWinner.Show();
+                    buttonScoreT.Text = scoreT.ToString();
+                    buttonScoreCT.Text = scoreCT.ToString();
+
+                    labelWaitingT.Visible = false;
+                    labelWaitingCT.Visible = false;
                 }
             }
+            else
+            {
+                this.Invoke((MethodInvoker)delegate { checkBoardState();});
+            }
         }
+
         ////////////////////////////////////////////////////////////////////////
         /// END GAME BOARD LOGIC
         ////////////////////////////////////////////////////////////////////////
@@ -362,20 +422,21 @@ namespace JamesTicTacToe
                     if (networkGame)
                     {
                         setBoardBasedOnBoxName(((PictureBox)sender).Name);
-                        swapPlayerHighlight();
+                        
                         con.sendBoard(board);
                         isMyTurn = false;
                         checkBoardState();
+                        swapPlayerHighlight();
                         checkTurn();
                     }
                     else
                     {
-                        
+                        swapPlayerHighlight();
                         isHost = !isHost;
 
                         setBoardBasedOnBoxName(((PictureBox)sender).Name);
                         checkBoardState();
-                        swapPlayerHighlight();
+                        
                         
                         resetBoard();
                     }
@@ -383,41 +444,75 @@ namespace JamesTicTacToe
             }
         }
 
+        private void highlightCT()
+        {
+            pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_alt_3;
+            pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist_alt;
+            labelTeamRight.ForeColor = Color.Gray;
+            labelPlayerNameRight.ForeColor = Color.Gray;
+
+            pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_3;
+            pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_1;
+            labelTeamLeft.ForeColor = Color.Gainsboro;
+            labelPlayerNameLeft.ForeColor = Color.Gainsboro;
+
+            labelWaitingCT.Visible = true;
+            labelWaitingT.Visible = false;
+            labelWaitingCT.Text = "";
+        }
+
+        private void highlightT()
+        {
+            pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_alt_3;
+            pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_alt_1;
+            labelTeamLeft.ForeColor = Color.Gray;
+            labelPlayerNameLeft.ForeColor = Color.Gray;
+
+            pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_3;
+            pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist;
+            labelTeamRight.ForeColor = Color.Gainsboro;
+            labelPlayerNameRight.ForeColor = Color.Gainsboro;
+
+            labelWaitingCT.Visible = false;
+            labelWaitingT.Visible = true;
+            labelWaitingT.Text = "";
+        }
+
         private void swapPlayerHighlight()
         {
-            if (haveWinner)
+            if (haveWinner && networkGame)
             {
                 return;
             }
 
+            //if host(CT) clicks box, set CT to grey and T to normal on both apps
+            //if client(T) clicks box, set T to grey and CT to normal on both apps
+
+            //
             if (isHost)
             {
-                pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_alt_3;
-                pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_alt_1;
-                labelTeamLeft.ForeColor = Color.Gray;
-                labelPlayerNameLeft.ForeColor = Color.Gray;
+                if (isMyTurn)
+                {
 
-                pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_3;
-                pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist;
-                labelTeamRight.ForeColor = Color.Gainsboro;
-                labelPlayerNameRight.ForeColor = Color.Gainsboro;
+                    highlightCT();
+                }
+                else
+                {
+                    highlightT();
+
+                }
             }
             else
             {
-
-
-
-                pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_alt_3;
-                pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist_alt;
-                labelTeamRight.ForeColor = Color.Gray;
-                labelPlayerNameRight.ForeColor = Color.Gray;
-
-                pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_3;
-                pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_1;
-                labelTeamLeft.ForeColor = Color.Gainsboro;
-                labelPlayerNameLeft.ForeColor = Color.Gainsboro;
-            }
-            
+                if (isMyTurn)
+                {
+                    highlightT();
+                }
+                else
+                {
+                    highlightCT();
+                }
+            }          
         }
 
         private void timerNextRound_Tick(object sender, EventArgs e)
@@ -435,26 +530,35 @@ namespace JamesTicTacToe
 
             }
 
-            haveWinner = false;
-     
-            clock.Restart();
-            resetBoard();
-            
-
             if (networkGame)
             {
-
+                isMyTurn = isWinner;
+                haveWinner = false;
+                checkTurn();
             }
             else
             {
-                isHost = !isHost;
                 swapPlayerHighlight();
+                isHost = !isHost;
+                
             }
+
+            isWinner = false;
+            haveWinner = false;
+
+            clock.Restart();
+            resetBoard();
         }
 
         private void timerClock_Tick(object sender, EventArgs e)
         {
             TimeSpan ts = clock.Elapsed;
+
+
+
+
+
+            
 
             if (haveWinner == false)
             {
@@ -625,6 +729,7 @@ namespace JamesTicTacToe
             }
         }
 
+        //triggered on opponents click
         private void GetDataFromOthers()
         {
             Task.Factory.StartNew(() =>
@@ -632,7 +737,9 @@ namespace JamesTicTacToe
                 board = con.getBoard();
                 isMyTurn = true;
                 checkBoardState();
+                swapPlayerHighlight();
                 checkTurn();
+                
             });
         }
 
@@ -652,10 +759,30 @@ namespace JamesTicTacToe
                     GetDataFromOthers();
                 }
                 resetBoard();
+                //swapPlayerHighlight();
             }
             else
             {
                 this.Invoke((MethodInvoker)delegate { checkTurn(); });
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+
+
+            labelWaitingCT.Text += " .";
+
+            if (labelWaitingCT.Text == " . . . .")
+            {
+                labelWaitingCT.Text = " .";
+            }
+
+            labelWaitingT.Text += " .";
+
+            if (labelWaitingT.Text == " . . . .")
+            {
+                labelWaitingT.Text = " .";
             }
         }
 

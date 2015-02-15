@@ -63,6 +63,16 @@ namespace JamesTicTacToe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap ajax_loader {
+            get {
+                object obj = ResourceManager.GetObject("ajax-loader", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap button_back_gray {
             get {
                 object obj = ResourceManager.GetObject("button_back_gray", resourceCulture);
@@ -253,6 +263,26 @@ namespace JamesTicTacToe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap loader_animated {
+            get {
+                object obj = ResourceManager.GetObject("loader_animated", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap loader_animation {
+            get {
+                object obj = ResourceManager.GetObject("loader_animation", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap panel_back_7 {
             get {
                 object obj = ResourceManager.GetObject("panel_back_7", resourceCulture);
@@ -286,6 +316,16 @@ namespace JamesTicTacToe.Properties {
         internal static System.Drawing.Bitmap picture_back_1 {
             get {
                 object obj = ResourceManager.GetObject("picture_back_1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap PleaseWait {
+            get {
+                object obj = ResourceManager.GetObject("PleaseWait", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -39,6 +39,7 @@
             this.labelSelectShared = new System.Windows.Forms.Label();
             this.labelSelectExit = new System.Windows.Forms.Label();
             this.panelLeftPlayerCT = new System.Windows.Forms.Panel();
+            this.labelWaitingCT = new System.Windows.Forms.Label();
             this.pictureBoxPortraitLeftCT = new System.Windows.Forms.PictureBox();
             this.labelTeamLeft = new System.Windows.Forms.Label();
             this.labelPlayerNameLeft = new System.Windows.Forms.Label();
@@ -80,6 +81,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureButtonT = new System.Windows.Forms.PictureBox();
             this.pictureButtonCT = new System.Windows.Forms.PictureBox();
+            this.timerWaiting = new System.Windows.Forms.Timer(this.components);
+            this.labelWaitingT = new System.Windows.Forms.Label();
             this.panelMainMenu.SuspendLayout();
             this.panelLeftPlayerCT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPortraitLeftCT)).BeginInit();
@@ -240,6 +243,7 @@
             this.panelLeftPlayerCT.BackColor = System.Drawing.Color.Transparent;
             this.panelLeftPlayerCT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelLeftPlayerCT.BackgroundImage")));
             this.panelLeftPlayerCT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panelLeftPlayerCT.Controls.Add(this.labelWaitingCT);
             this.panelLeftPlayerCT.Controls.Add(this.pictureBoxPortraitLeftCT);
             this.panelLeftPlayerCT.Controls.Add(this.labelTeamLeft);
             this.panelLeftPlayerCT.Controls.Add(this.labelPlayerNameLeft);
@@ -249,6 +253,17 @@
             this.panelLeftPlayerCT.Size = new System.Drawing.Size(200, 312);
             this.panelLeftPlayerCT.TabIndex = 62;
             this.panelLeftPlayerCT.Visible = false;
+            // 
+            // labelWaitingCT
+            // 
+            this.labelWaitingCT.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWaitingCT.ForeColor = System.Drawing.Color.LightSkyBlue;
+            this.labelWaitingCT.Location = new System.Drawing.Point(0, 98);
+            this.labelWaitingCT.Name = "labelWaitingCT";
+            this.labelWaitingCT.Size = new System.Drawing.Size(200, 34);
+            this.labelWaitingCT.TabIndex = 68;
+            this.labelWaitingCT.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelWaitingCT.Visible = false;
             // 
             // pictureBoxPortraitLeftCT
             // 
@@ -301,6 +316,7 @@
             this.panelRightPlayerT.BackColor = System.Drawing.Color.Transparent;
             this.panelRightPlayerT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelRightPlayerT.BackgroundImage")));
             this.panelRightPlayerT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.panelRightPlayerT.Controls.Add(this.labelWaitingT);
             this.panelRightPlayerT.Controls.Add(this.pictureBoxPortraitRightT);
             this.panelRightPlayerT.Controls.Add(this.pictureBoxLogoRightT);
             this.panelRightPlayerT.Controls.Add(this.labelTeamRight);
@@ -761,21 +777,38 @@
             this.pictureButtonCT.MouseEnter += new System.EventHandler(this.pictureButton_Enter);
             this.pictureButtonCT.MouseLeave += new System.EventHandler(this.pictureButton_Leave);
             // 
+            // timerWaiting
+            // 
+            this.timerWaiting.Interval = 800;
+            this.timerWaiting.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // labelWaitingT
+            // 
+            this.labelWaitingT.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelWaitingT.ForeColor = System.Drawing.Color.Khaki;
+            this.labelWaitingT.Location = new System.Drawing.Point(0, 99);
+            this.labelWaitingT.Name = "labelWaitingT";
+            this.labelWaitingT.Size = new System.Drawing.Size(200, 34);
+            this.labelWaitingT.TabIndex = 69;
+            this.labelWaitingT.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.labelWaitingT.Visible = false;
+            // 
             // JamesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::JamesTicTacToe.Properties.Resources.form_back_1;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.panelRightPlayerT);
             this.Controls.Add(this.panelNetworkSetup);
             this.Controls.Add(this.panelRoundWinner);
             this.Controls.Add(this.panelScoreTime);
-            this.Controls.Add(this.panelMainMenu);
-            this.Controls.Add(this.panelRightPlayerT);
             this.Controls.Add(this.panelLeftPlayerCT);
             this.Controls.Add(this.panelGameBoard);
+            this.Controls.Add(this.panelMainMenu);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "JamesForm";
-            this.Text = "Form1";
+            this.Text = "Tic-Tac: Global Offensive";
             this.panelMainMenu.ResumeLayout(false);
             this.panelLeftPlayerCT.ResumeLayout(false);
             this.panelLeftPlayerCT.PerformLayout();
@@ -858,6 +891,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureButtonT;
         private System.Windows.Forms.PictureBox pictureButtonCT;
+        private System.Windows.Forms.Label labelWaitingCT;
+        private System.Windows.Forms.Timer timerWaiting;
+        private System.Windows.Forms.Label labelWaitingT;
     }
 }
 
