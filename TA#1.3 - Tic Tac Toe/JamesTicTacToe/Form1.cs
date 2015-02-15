@@ -53,15 +53,15 @@ namespace JamesTicTacToe
             buttonClock.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
         }
 
-        protected override CreateParams CreateParams
-        {
-            get
-            {
-                CreateParams cp = base.CreateParams;
-                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
-                return cp;
-            }
-        } 
+        //protected override CreateParams CreateParams
+        //{
+        //    get
+        //    {
+        //        CreateParams cp = base.CreateParams;
+        //        cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+        //        return cp;
+        //    }
+        //} 
 
     ////////////////////////////////////////////////////////////////////////////
     ///     SELECTION LABEL HIGHLIGHTING
@@ -181,6 +181,7 @@ namespace JamesTicTacToe
 
         private void resetBoard()
         {
+            
             g00.Image = mapping[board[0][0]];
             g01.Image = mapping[board[0][1]];
             g02.Image = mapping[board[0][2]];
@@ -399,14 +400,14 @@ namespace JamesTicTacToe
             if ((clickedBox.Image == null) && (haveWinner == false))
             {
 
-                if (player1Turn)
-                {
-                   // clickedBox.Image = Properties.Resources.icon_diffuse;
-                }
-                else
-                {
-                  //  clickedBox.Image = Properties.Resources.icon_bomb;
-                }
+                //if (player1Turn)
+                //{
+                //   // clickedBox.Image = Properties.Resources.icon_diffuse;
+                //}
+                //else
+                //{
+                //  //  clickedBox.Image = Properties.Resources.icon_bomb;
+                //}
 
                 if (networkGame)
                 {
@@ -636,7 +637,7 @@ namespace JamesTicTacToe
             {
                 board = con.getBoard();
                 player1Turn = true;
-                checkBoardState();
+                checkNetworkBoard();
                 CheckTurn();
             });
         }

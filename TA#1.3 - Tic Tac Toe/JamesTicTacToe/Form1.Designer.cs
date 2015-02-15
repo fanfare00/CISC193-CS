@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JamesForm));
             this.panelMainMenu = new System.Windows.Forms.Panel();
+            this.labelSelectOptions = new System.Windows.Forms.Label();
+            this.labelSelectCredits = new System.Windows.Forms.Label();
+            this.labelSelectPlay = new System.Windows.Forms.Label();
             this.labelSelectBack = new System.Windows.Forms.Label();
             this.labelSelectNetwork = new System.Windows.Forms.Label();
             this.labelSelectShared = new System.Windows.Forms.Label();
-            this.labelSelectOptions = new System.Windows.Forms.Label();
-            this.labelSelectCredits = new System.Windows.Forms.Label();
             this.labelSelectExit = new System.Windows.Forms.Label();
-            this.labelSelectPlay = new System.Windows.Forms.Label();
             this.panelLeftPlayerCT = new System.Windows.Forms.Panel();
             this.pictureBoxPortraitLeftCT = new System.Windows.Forms.PictureBox();
             this.labelTeamLeft = new System.Windows.Forms.Label();
@@ -120,6 +120,53 @@
             this.panelMainMenu.Size = new System.Drawing.Size(220, 151);
             this.panelMainMenu.TabIndex = 61;
             // 
+            // labelSelectOptions
+            // 
+            this.labelSelectOptions.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSelectOptions.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelSelectOptions.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.labelSelectOptions.Location = new System.Drawing.Point(3, 74);
+            this.labelSelectOptions.Name = "labelSelectOptions";
+            this.labelSelectOptions.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.labelSelectOptions.Size = new System.Drawing.Size(247, 19);
+            this.labelSelectOptions.TabIndex = 52;
+            this.labelSelectOptions.Text = "HELP AND OPTIONS";
+            this.labelSelectOptions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelSelectOptions.MouseEnter += new System.EventHandler(this.label_Highlight);
+            this.labelSelectOptions.MouseLeave += new System.EventHandler(this.label_Unhighlight);
+            // 
+            // labelSelectCredits
+            // 
+            this.labelSelectCredits.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSelectCredits.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelSelectCredits.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.labelSelectCredits.Location = new System.Drawing.Point(3, 101);
+            this.labelSelectCredits.Name = "labelSelectCredits";
+            this.labelSelectCredits.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.labelSelectCredits.Size = new System.Drawing.Size(247, 19);
+            this.labelSelectCredits.TabIndex = 51;
+            this.labelSelectCredits.Text = "CREDITS";
+            this.labelSelectCredits.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelSelectCredits.MouseEnter += new System.EventHandler(this.label_Highlight);
+            this.labelSelectCredits.MouseLeave += new System.EventHandler(this.label_Unhighlight);
+            // 
+            // labelSelectPlay
+            // 
+            this.labelSelectPlay.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSelectPlay.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelSelectPlay.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.labelSelectPlay.Location = new System.Drawing.Point(3, 48);
+            this.labelSelectPlay.Margin = new System.Windows.Forms.Padding(3);
+            this.labelSelectPlay.Name = "labelSelectPlay";
+            this.labelSelectPlay.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.labelSelectPlay.Size = new System.Drawing.Size(247, 18);
+            this.labelSelectPlay.TabIndex = 49;
+            this.labelSelectPlay.Text = "PLAY";
+            this.labelSelectPlay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelSelectPlay.Click += new System.EventHandler(this.labelSelectPlay_Click);
+            this.labelSelectPlay.MouseEnter += new System.EventHandler(this.label_Highlight);
+            this.labelSelectPlay.MouseLeave += new System.EventHandler(this.label_Unhighlight);
+            // 
             // labelSelectBack
             // 
             this.labelSelectBack.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -173,36 +220,6 @@
             this.labelSelectShared.MouseEnter += new System.EventHandler(this.label_Highlight);
             this.labelSelectShared.MouseLeave += new System.EventHandler(this.label_Unhighlight);
             // 
-            // labelSelectOptions
-            // 
-            this.labelSelectOptions.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSelectOptions.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelSelectOptions.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.labelSelectOptions.Location = new System.Drawing.Point(3, 74);
-            this.labelSelectOptions.Name = "labelSelectOptions";
-            this.labelSelectOptions.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.labelSelectOptions.Size = new System.Drawing.Size(247, 19);
-            this.labelSelectOptions.TabIndex = 52;
-            this.labelSelectOptions.Text = "HELP AND OPTIONS";
-            this.labelSelectOptions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelSelectOptions.MouseEnter += new System.EventHandler(this.label_Highlight);
-            this.labelSelectOptions.MouseLeave += new System.EventHandler(this.label_Unhighlight);
-            // 
-            // labelSelectCredits
-            // 
-            this.labelSelectCredits.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSelectCredits.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelSelectCredits.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.labelSelectCredits.Location = new System.Drawing.Point(3, 101);
-            this.labelSelectCredits.Name = "labelSelectCredits";
-            this.labelSelectCredits.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.labelSelectCredits.Size = new System.Drawing.Size(247, 19);
-            this.labelSelectCredits.TabIndex = 51;
-            this.labelSelectCredits.Text = "CREDITS";
-            this.labelSelectCredits.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelSelectCredits.MouseEnter += new System.EventHandler(this.label_Highlight);
-            this.labelSelectCredits.MouseLeave += new System.EventHandler(this.label_Unhighlight);
-            // 
             // labelSelectExit
             // 
             this.labelSelectExit.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -217,23 +234,6 @@
             this.labelSelectExit.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelSelectExit.MouseEnter += new System.EventHandler(this.label_Highlight);
             this.labelSelectExit.MouseLeave += new System.EventHandler(this.label_Unhighlight);
-            // 
-            // labelSelectPlay
-            // 
-            this.labelSelectPlay.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSelectPlay.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelSelectPlay.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.labelSelectPlay.Location = new System.Drawing.Point(3, 48);
-            this.labelSelectPlay.Margin = new System.Windows.Forms.Padding(3);
-            this.labelSelectPlay.Name = "labelSelectPlay";
-            this.labelSelectPlay.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.labelSelectPlay.Size = new System.Drawing.Size(247, 18);
-            this.labelSelectPlay.TabIndex = 49;
-            this.labelSelectPlay.Text = "PLAY";
-            this.labelSelectPlay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelSelectPlay.Click += new System.EventHandler(this.labelSelectPlay_Click);
-            this.labelSelectPlay.MouseEnter += new System.EventHandler(this.label_Highlight);
-            this.labelSelectPlay.MouseLeave += new System.EventHandler(this.label_Unhighlight);
             // 
             // panelLeftPlayerCT
             // 
@@ -765,8 +765,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::JamesTicTacToe.Properties.Resources.form_back_1;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.panelNetworkSetup);
             this.Controls.Add(this.panelGameBoard);
+            this.Controls.Add(this.panelNetworkSetup);
             this.Controls.Add(this.panelRoundWinner);
             this.Controls.Add(this.panelScoreTime);
             this.Controls.Add(this.panelMainMenu);
