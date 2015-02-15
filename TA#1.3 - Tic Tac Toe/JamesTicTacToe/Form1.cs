@@ -53,15 +53,15 @@ namespace JamesTicTacToe
             buttonClock.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
         }
 
-        //protected override CreateParams CreateParams
-        //{
-        //    get
-        //    {
-        //        CreateParams cp = base.CreateParams;
-        //        cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
-        //        return cp;
-        //    }
-        //} 
+        protected override CreateParams CreateParams
+        {
+            get
+            {
+                CreateParams cp = base.CreateParams;
+                cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
+                return cp;
+            }
+        } 
 
     ////////////////////////////////////////////////////////////////////////////
     ///     SELECTION LABEL HIGHLIGHTING
@@ -425,7 +425,6 @@ namespace JamesTicTacToe
                     player1Turn = !player1Turn;
                     switchTurn();
                     resetBoard();
-                    Close();
                 }
 
             }
