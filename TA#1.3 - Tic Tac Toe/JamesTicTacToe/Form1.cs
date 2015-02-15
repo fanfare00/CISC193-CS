@@ -158,12 +158,12 @@ namespace JamesTicTacToe
 
         private void startGame()
         {
-            if (networkGame)
-            {
-                isMyTurn = isHost;
-            }
+            //if (networkGame)
+            //{
+            //    isMyTurn = isHost;
+            //}
 
-            timerClock.Start();
+           // timerClock.Start();
 
             panelMainMenu.Hide();
             panelNetworkSetup.Hide();
@@ -402,37 +402,41 @@ namespace JamesTicTacToe
 
             labelTeamLeft.Text = isMyTurn.ToString();
 
-            if ((clickedBox.Image == null) && (haveWinner == false))
+            if ((networkGame) && (isMyTurn)) // && (haveWinner == false)
             {
-
-                //if (player1Turn)
-                //{
-                //   // clickedBox.Image = Properties.Resources.icon_diffuse;
-                //}
-                //else
-                //{
-                //  //  clickedBox.Image = Properties.Resources.icon_bomb;
-                //}
-
-                if ((networkGame) && (isMyTurn))
+                if ((clickedBox.Image == null))
                 {
-
                     SetBoardBasedOnButtonName(((PictureBox)sender).Name);
                     con.sendBoard(board);
                     isMyTurn = false;
                     //checkNetworkBoard();
                     CheckTurn();
+
+                    //if (player1Turn)
+                    //{
+                    //   // clickedBox.Image = Properties.Resources.icon_diffuse;
+                    //}
+                    //else
+                    //{
+                    //  //  clickedBox.Image = Properties.Resources.icon_bomb;
+                    //
                 }
-                else
-                {
+            }
+
+
+
+
+              //  }
+             //   else
+              //  {
                     //SetBoardBasedOnButtonName(((PictureBox)sender).Name);
                     //checkBoardState();
                     //player1Turn = !player1Turn;
                     //switchTurn();
                     //resetBoard();
-                }
+               // }
 
-            }
+           // }
         }
 
         private void timerNextRound_Tick(object sender, EventArgs e)
@@ -650,9 +654,9 @@ namespace JamesTicTacToe
         {
             if (!this.InvokeRequired)
             {
-                if (isMyTurn && haveWinner == false)
+                if (isMyTurn) // && haveWinner == false
                 {
-                    SetEnabled(true);
+                   // SetEnabled(true);
 
                     //pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_alt_3;
                     //pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist_alt;
@@ -666,7 +670,7 @@ namespace JamesTicTacToe
                 }
                 else
                 {
-                    SetEnabled(false);
+                   // SetEnabled(false);
 
                     //pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_alt_3;
                     //pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_alt_1;

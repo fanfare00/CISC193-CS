@@ -697,6 +697,7 @@
             this.textBoxPort.Name = "textBoxPort";
             this.textBoxPort.Size = new System.Drawing.Size(50, 23);
             this.textBoxPort.TabIndex = 2;
+            this.textBoxPort.Text = "4100";
             // 
             // textBoxIP
             // 
@@ -707,6 +708,7 @@
             this.textBoxIP.Name = "textBoxIP";
             this.textBoxIP.Size = new System.Drawing.Size(141, 23);
             this.textBoxIP.TabIndex = 1;
+            this.textBoxIP.Text = "192.168.2.17";
             // 
             // label2
             // 
@@ -765,13 +767,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::JamesTicTacToe.Properties.Resources.form_back_1;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.panelGameBoard);
             this.Controls.Add(this.panelNetworkSetup);
             this.Controls.Add(this.panelRoundWinner);
             this.Controls.Add(this.panelScoreTime);
             this.Controls.Add(this.panelMainMenu);
             this.Controls.Add(this.panelRightPlayerT);
             this.Controls.Add(this.panelLeftPlayerCT);
+            this.Controls.Add(this.panelGameBoard);
             this.Name = "JamesForm";
             this.Text = "Form1";
             this.panelMainMenu.ResumeLayout(false);
