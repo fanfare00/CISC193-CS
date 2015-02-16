@@ -139,29 +139,17 @@
   <data name="portrait_CT_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\portrait_CT_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CM_Deathpulse" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CM_Deathpulse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="portrait_CT_alt_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\portrait_CT_alt_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="form_back_alt_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\form_back_alt_3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="panel_back_7" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\panel_back_7.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="form_back_alt_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\form_back_alt_2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="button_back_green_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button_back_green_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="PleaseWait" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\PleaseWait.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="ajax-loader" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\ajax-loader.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="form_back_alt_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\form_back_alt_1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -199,9 +187,6 @@
   <data name="clear" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="loader_animated" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loader_animated.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="icon_diffuse" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_diffuse.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -211,7 +196,13 @@
   <data name="icon_CT_1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon_CT_1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="loader_animation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\loader_animation.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="CSGOMenuTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\CSGOMenuTheme.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sound_click_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sound_click_5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="sound_rollover" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sound_rollover.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
 </root>

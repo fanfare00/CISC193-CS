@@ -63,16 +63,6 @@ namespace JamesTicTacToe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap ajax_loader {
-            get {
-                object obj = ResourceManager.GetObject("ajax-loader", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap button_back_gray {
             get {
                 object obj = ResourceManager.GetObject("button_back_gray", resourceCulture);
@@ -111,12 +101,11 @@ namespace JamesTicTacToe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
-        internal static System.Drawing.Bitmap CM_Deathpulse {
+        internal static System.IO.UnmanagedMemoryStream CSGOMenuTheme {
             get {
-                object obj = ResourceManager.GetObject("CM_Deathpulse", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ResourceManager.GetStream("CSGOMenuTheme", resourceCulture);
             }
         }
         
@@ -263,36 +252,6 @@ namespace JamesTicTacToe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap loader_animated {
-            get {
-                object obj = ResourceManager.GetObject("loader_animated", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap loader_animation {
-            get {
-                object obj = ResourceManager.GetObject("loader_animation", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap panel_back_7 {
-            get {
-                object obj = ResourceManager.GetObject("panel_back_7", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap panel_back_8 {
             get {
                 object obj = ResourceManager.GetObject("panel_back_8", resourceCulture);
@@ -316,16 +275,6 @@ namespace JamesTicTacToe.Properties {
         internal static System.Drawing.Bitmap picture_back_1 {
             get {
                 object obj = ResourceManager.GetObject("picture_back_1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap PleaseWait {
-            get {
-                object obj = ResourceManager.GetObject("PleaseWait", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -377,6 +326,24 @@ namespace JamesTicTacToe.Properties {
             get {
                 object obj = ResourceManager.GetObject("score_back_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream sound_click_5 {
+            get {
+                return ResourceManager.GetStream("sound_click_5", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
+        /// </summary>
+        internal static System.IO.UnmanagedMemoryStream sound_rollover {
+            get {
+                return ResourceManager.GetStream("sound_rollover", resourceCulture);
             }
         }
     }
