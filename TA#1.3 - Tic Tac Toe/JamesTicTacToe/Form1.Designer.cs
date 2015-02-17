@@ -31,13 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(JamesForm));
             this.panelMainMenu = new System.Windows.Forms.Panel();
-            this.labelSelectOptions = new System.Windows.Forms.Label();
-            this.labelSelectCredits = new System.Windows.Forms.Label();
             this.labelSelectExit = new System.Windows.Forms.Label();
-            this.labelSelectShared = new System.Windows.Forms.Label();
-            this.labelSelectPlay = new System.Windows.Forms.Label();
             this.labelSelectNetwork = new System.Windows.Forms.Label();
             this.labelSelectBack = new System.Windows.Forms.Label();
+            this.labelSelectCredits = new System.Windows.Forms.Label();
+            this.labelSelectOptions = new System.Windows.Forms.Label();
+            this.labelSelectShared = new System.Windows.Forms.Label();
+            this.labelSelectPlay = new System.Windows.Forms.Label();
             this.panelLeftPlayerCT = new System.Windows.Forms.Panel();
             this.pictureBoxPortraitLeftCT = new System.Windows.Forms.PictureBox();
             this.labelTeamLeft = new System.Windows.Forms.Label();
@@ -81,11 +81,14 @@
             this.pictureButtonT = new System.Windows.Forms.PictureBox();
             this.pictureButtonCT = new System.Windows.Forms.PictureBox();
             this.panelHelp = new System.Windows.Forms.Panel();
+            this.jamesTextBox1 = new JamesCustomControls.JamesTextBox();
             this.labelHelpHeader = new System.Windows.Forms.Label();
             this.soundEffectPlayer2 = new AxWMPLib.AxWindowsMediaPlayer();
             this.soundEffectPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.jamesMediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
-            this.jamesTextBox1 = new JamesCustomControls.JamesTextBox();
+            this.panelCredits = new System.Windows.Forms.Panel();
+            this.jamesTextBoxCredits = new JamesCustomControls.JamesTextBox();
+            this.labeCreditsHeader = new System.Windows.Forms.Label();
             this.panelMainMenu.SuspendLayout();
             this.panelLeftPlayerCT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPortraitLeftCT)).BeginInit();
@@ -113,6 +116,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.soundEffectPlayer2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.soundEffectPlayer1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jamesMediaPlayer)).BeginInit();
+            this.panelCredits.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelMainMenu
@@ -130,38 +134,6 @@
             this.panelMainMenu.Size = new System.Drawing.Size(220, 151);
             this.panelMainMenu.TabIndex = 61;
             // 
-            // labelSelectOptions
-            // 
-            this.labelSelectOptions.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSelectOptions.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelSelectOptions.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.labelSelectOptions.Location = new System.Drawing.Point(3, 74);
-            this.labelSelectOptions.Name = "labelSelectOptions";
-            this.labelSelectOptions.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.labelSelectOptions.Size = new System.Drawing.Size(247, 19);
-            this.labelSelectOptions.TabIndex = 52;
-            this.labelSelectOptions.Text = "HELP &&  OPTIONS";
-            this.labelSelectOptions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelSelectOptions.Click += new System.EventHandler(this.labelSelectGeneral_Click);
-            this.labelSelectOptions.MouseEnter += new System.EventHandler(this.label_Highlight);
-            this.labelSelectOptions.MouseLeave += new System.EventHandler(this.label_Unhighlight);
-            // 
-            // labelSelectCredits
-            // 
-            this.labelSelectCredits.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSelectCredits.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelSelectCredits.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.labelSelectCredits.Location = new System.Drawing.Point(3, 101);
-            this.labelSelectCredits.Name = "labelSelectCredits";
-            this.labelSelectCredits.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.labelSelectCredits.Size = new System.Drawing.Size(247, 19);
-            this.labelSelectCredits.TabIndex = 51;
-            this.labelSelectCredits.Text = "CREDITS";
-            this.labelSelectCredits.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelSelectCredits.Click += new System.EventHandler(this.labelSelectGeneral_Click);
-            this.labelSelectCredits.MouseEnter += new System.EventHandler(this.label_Highlight);
-            this.labelSelectCredits.MouseLeave += new System.EventHandler(this.label_Unhighlight);
-            // 
             // labelSelectExit
             // 
             this.labelSelectExit.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -177,41 +149,6 @@
             this.labelSelectExit.Click += new System.EventHandler(this.labelSelectGeneral_Click);
             this.labelSelectExit.MouseEnter += new System.EventHandler(this.label_Highlight);
             this.labelSelectExit.MouseLeave += new System.EventHandler(this.label_Unhighlight);
-            // 
-            // labelSelectShared
-            // 
-            this.labelSelectShared.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSelectShared.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelSelectShared.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.labelSelectShared.Location = new System.Drawing.Point(3, 74);
-            this.labelSelectShared.Margin = new System.Windows.Forms.Padding(3);
-            this.labelSelectShared.Name = "labelSelectShared";
-            this.labelSelectShared.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.labelSelectShared.Size = new System.Drawing.Size(214, 18);
-            this.labelSelectShared.TabIndex = 54;
-            this.labelSelectShared.Text = "SHARED TWO-PLAYER";
-            this.labelSelectShared.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelSelectShared.Visible = false;
-            this.labelSelectShared.Click += new System.EventHandler(this.labelSelectGeneral_Click);
-            this.labelSelectShared.MouseEnter += new System.EventHandler(this.label_Highlight);
-            this.labelSelectShared.MouseLeave += new System.EventHandler(this.label_Unhighlight);
-            // 
-            // labelSelectPlay
-            // 
-            this.labelSelectPlay.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSelectPlay.ForeColor = System.Drawing.Color.Gainsboro;
-            this.labelSelectPlay.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.labelSelectPlay.Location = new System.Drawing.Point(3, 48);
-            this.labelSelectPlay.Margin = new System.Windows.Forms.Padding(3);
-            this.labelSelectPlay.Name = "labelSelectPlay";
-            this.labelSelectPlay.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
-            this.labelSelectPlay.Size = new System.Drawing.Size(247, 18);
-            this.labelSelectPlay.TabIndex = 49;
-            this.labelSelectPlay.Text = "PLAY";
-            this.labelSelectPlay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.labelSelectPlay.Click += new System.EventHandler(this.labelSelectGeneral_Click);
-            this.labelSelectPlay.MouseEnter += new System.EventHandler(this.label_Highlight);
-            this.labelSelectPlay.MouseLeave += new System.EventHandler(this.label_Unhighlight);
             // 
             // labelSelectNetwork
             // 
@@ -248,6 +185,73 @@
             this.labelSelectBack.MouseEnter += new System.EventHandler(this.label_Highlight);
             this.labelSelectBack.MouseLeave += new System.EventHandler(this.label_Unhighlight);
             // 
+            // labelSelectCredits
+            // 
+            this.labelSelectCredits.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSelectCredits.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelSelectCredits.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.labelSelectCredits.Location = new System.Drawing.Point(3, 101);
+            this.labelSelectCredits.Name = "labelSelectCredits";
+            this.labelSelectCredits.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.labelSelectCredits.Size = new System.Drawing.Size(247, 19);
+            this.labelSelectCredits.TabIndex = 51;
+            this.labelSelectCredits.Text = "CREDITS";
+            this.labelSelectCredits.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelSelectCredits.Click += new System.EventHandler(this.labelSelectGeneral_Click);
+            this.labelSelectCredits.MouseEnter += new System.EventHandler(this.label_Highlight);
+            this.labelSelectCredits.MouseLeave += new System.EventHandler(this.label_Unhighlight);
+            // 
+            // labelSelectOptions
+            // 
+            this.labelSelectOptions.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSelectOptions.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelSelectOptions.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.labelSelectOptions.Location = new System.Drawing.Point(3, 74);
+            this.labelSelectOptions.Name = "labelSelectOptions";
+            this.labelSelectOptions.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.labelSelectOptions.Size = new System.Drawing.Size(247, 19);
+            this.labelSelectOptions.TabIndex = 52;
+            this.labelSelectOptions.Text = "HELP &&  OPTIONS";
+            this.labelSelectOptions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelSelectOptions.Click += new System.EventHandler(this.labelSelectGeneral_Click);
+            this.labelSelectOptions.MouseEnter += new System.EventHandler(this.label_Highlight);
+            this.labelSelectOptions.MouseLeave += new System.EventHandler(this.label_Unhighlight);
+            // 
+            // labelSelectShared
+            // 
+            this.labelSelectShared.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSelectShared.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelSelectShared.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.labelSelectShared.Location = new System.Drawing.Point(3, 74);
+            this.labelSelectShared.Margin = new System.Windows.Forms.Padding(3);
+            this.labelSelectShared.Name = "labelSelectShared";
+            this.labelSelectShared.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.labelSelectShared.Size = new System.Drawing.Size(214, 18);
+            this.labelSelectShared.TabIndex = 54;
+            this.labelSelectShared.Text = "SHARED TWO-PLAYER";
+            this.labelSelectShared.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelSelectShared.Visible = false;
+            this.labelSelectShared.Click += new System.EventHandler(this.labelSelectGeneral_Click);
+            this.labelSelectShared.MouseEnter += new System.EventHandler(this.label_Highlight);
+            this.labelSelectShared.MouseLeave += new System.EventHandler(this.label_Unhighlight);
+            // 
+            // labelSelectPlay
+            // 
+            this.labelSelectPlay.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSelectPlay.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelSelectPlay.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.labelSelectPlay.Location = new System.Drawing.Point(3, 48);
+            this.labelSelectPlay.Margin = new System.Windows.Forms.Padding(3);
+            this.labelSelectPlay.Name = "labelSelectPlay";
+            this.labelSelectPlay.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
+            this.labelSelectPlay.Size = new System.Drawing.Size(247, 18);
+            this.labelSelectPlay.TabIndex = 49;
+            this.labelSelectPlay.Text = "PLAY";
+            this.labelSelectPlay.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.labelSelectPlay.Click += new System.EventHandler(this.labelSelectGeneral_Click);
+            this.labelSelectPlay.MouseEnter += new System.EventHandler(this.label_Highlight);
+            this.labelSelectPlay.MouseLeave += new System.EventHandler(this.label_Unhighlight);
+            // 
             // panelLeftPlayerCT
             // 
             this.panelLeftPlayerCT.BackColor = System.Drawing.Color.Transparent;
@@ -281,7 +285,7 @@
             // 
             this.labelTeamLeft.AutoSize = true;
             this.labelTeamLeft.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTeamLeft.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelTeamLeft.ForeColor = System.Drawing.Color.LightSkyBlue;
             this.labelTeamLeft.Location = new System.Drawing.Point(21, 81);
             this.labelTeamLeft.Name = "labelTeamLeft";
             this.labelTeamLeft.Size = new System.Drawing.Size(161, 19);
@@ -352,7 +356,7 @@
             // 
             this.labelTeamRight.AutoSize = true;
             this.labelTeamRight.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelTeamRight.ForeColor = System.Drawing.Color.White;
+            this.labelTeamRight.ForeColor = System.Drawing.Color.Khaki;
             this.labelTeamRight.Location = new System.Drawing.Point(61, 80);
             this.labelTeamRight.Name = "labelTeamRight";
             this.labelTeamRight.Size = new System.Drawing.Size(89, 19);
@@ -666,7 +670,7 @@
             this.labelClient.Name = "labelClient";
             this.labelClient.Size = new System.Drawing.Size(125, 16);
             this.labelClient.TabIndex = 9;
-            this.labelClient.Text = "(CLIENT)";
+            this.labelClient.Text = "CLIENT (Player 2)";
             this.labelClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelHost
@@ -677,7 +681,7 @@
             this.labelHost.Name = "labelHost";
             this.labelHost.Size = new System.Drawing.Size(125, 16);
             this.labelHost.TabIndex = 8;
-            this.labelHost.Text = "(HOST)";
+            this.labelHost.Text = "HOST (Player 1)";
             this.labelHost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelNetworkNameT
@@ -785,6 +789,19 @@
             this.panelHelp.TabIndex = 12;
             this.panelHelp.Visible = false;
             // 
+            // jamesTextBox1
+            // 
+            this.jamesTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.jamesTextBox1.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jamesTextBox1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.jamesTextBox1.Location = new System.Drawing.Point(11, 48);
+            this.jamesTextBox1.Name = "jamesTextBox1";
+            this.jamesTextBox1.ReadOnly = true;
+            this.jamesTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.jamesTextBox1.Size = new System.Drawing.Size(446, 371);
+            this.jamesTextBox1.TabIndex = 71;
+            this.jamesTextBox1.Text = resources.GetString("jamesTextBox1.Text");
+            // 
             // labelHelpHeader
             // 
             this.labelHelpHeader.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -826,18 +843,42 @@
             this.jamesMediaPlayer.TabIndex = 68;
             this.jamesMediaPlayer.Visible = false;
             // 
-            // jamesTextBox1
+            // panelCredits
             // 
-            this.jamesTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.jamesTextBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.jamesTextBox1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.jamesTextBox1.Location = new System.Drawing.Point(11, 48);
-            this.jamesTextBox1.Name = "jamesTextBox1";
-            this.jamesTextBox1.ReadOnly = true;
-            this.jamesTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
-            this.jamesTextBox1.Size = new System.Drawing.Size(446, 371);
-            this.jamesTextBox1.TabIndex = 71;
-            this.jamesTextBox1.Text = resources.GetString("jamesTextBox1.Text");
+            this.panelCredits.BackColor = System.Drawing.Color.Transparent;
+            this.panelCredits.BackgroundImage = global::JamesTicTacToe.Properties.Resources.panel_back_large;
+            this.panelCredits.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelCredits.Controls.Add(this.jamesTextBoxCredits);
+            this.panelCredits.Controls.Add(this.labeCreditsHeader);
+            this.panelCredits.Location = new System.Drawing.Point(281, 72);
+            this.panelCredits.Name = "panelCredits";
+            this.panelCredits.Size = new System.Drawing.Size(457, 419);
+            this.panelCredits.TabIndex = 71;
+            this.panelCredits.Visible = false;
+            // 
+            // jamesTextBoxCredits
+            // 
+            this.jamesTextBoxCredits.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.jamesTextBoxCredits.Font = new System.Drawing.Font("Consolas", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jamesTextBoxCredits.ForeColor = System.Drawing.Color.Gainsboro;
+            this.jamesTextBoxCredits.Location = new System.Drawing.Point(11, 48);
+            this.jamesTextBoxCredits.Name = "jamesTextBoxCredits";
+            this.jamesTextBoxCredits.ReadOnly = true;
+            this.jamesTextBoxCredits.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.jamesTextBoxCredits.Size = new System.Drawing.Size(446, 365);
+            this.jamesTextBoxCredits.TabIndex = 71;
+            this.jamesTextBoxCredits.Text = resources.GetString("jamesTextBoxCredits.Text");
+            // 
+            // labeCreditsHeader
+            // 
+            this.labeCreditsHeader.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labeCreditsHeader.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labeCreditsHeader.Location = new System.Drawing.Point(7, 8);
+            this.labeCreditsHeader.Name = "labeCreditsHeader";
+            this.labeCreditsHeader.Size = new System.Drawing.Size(447, 35);
+            this.labeCreditsHeader.TabIndex = 1;
+            this.labeCreditsHeader.Text = "CREDITS";
+            this.labeCreditsHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // JamesForm
             // 
@@ -845,21 +886,24 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::JamesTicTacToe.Properties.Resources.form_back_1;
             this.ClientSize = new System.Drawing.Size(784, 561);
-            this.Controls.Add(this.panelHelp);
-            this.Controls.Add(this.panelNetworkSetup);
             this.Controls.Add(this.soundEffectPlayer2);
             this.Controls.Add(this.soundEffectPlayer1);
             this.Controls.Add(this.jamesMediaPlayer);
-            this.Controls.Add(this.panelRightPlayerT);
             this.Controls.Add(this.panelRoundWinner);
             this.Controls.Add(this.panelScoreTime);
-            this.Controls.Add(this.panelGameBoard);
             this.Controls.Add(this.panelMainMenu);
             this.Controls.Add(this.panelLeftPlayerCT);
+            this.Controls.Add(this.panelNetworkSetup);
+            this.Controls.Add(this.panelCredits);
+            this.Controls.Add(this.panelGameBoard);
+            this.Controls.Add(this.panelHelp);
+            this.Controls.Add(this.panelRightPlayerT);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Name = "JamesForm";
             this.Text = "Tic-Tac: Global Offensive";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyPressed);
             this.panelMainMenu.ResumeLayout(false);
             this.panelLeftPlayerCT.ResumeLayout(false);
             this.panelLeftPlayerCT.PerformLayout();
@@ -890,6 +934,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.soundEffectPlayer2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.soundEffectPlayer1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.jamesMediaPlayer)).EndInit();
+            this.panelCredits.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -952,6 +997,9 @@
         private System.Windows.Forms.Panel panelHelp;
         private System.Windows.Forms.Label labelHelpHeader;
         private JamesCustomControls.JamesTextBox jamesTextBox1;
+        private System.Windows.Forms.Panel panelCredits;
+        private JamesCustomControls.JamesTextBox jamesTextBoxCredits;
+        private System.Windows.Forms.Label labeCreditsHeader;
     }
 }
 

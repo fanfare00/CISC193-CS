@@ -12,6 +12,9 @@ using System.Text.RegularExpressions;
 using System.Media;
 using System.Runtime.InteropServices;
 
+using System.Reflection;
+using System.IO;
+
 namespace JamesTicTacToe
 {
     public partial class JamesForm : Form
@@ -46,11 +49,8 @@ namespace JamesTicTacToe
         {
             InitializeComponent();
 
-
-
-
-
-            jamesMediaPlayer.URL = AppDomain.CurrentDomain.BaseDirectory + @"CSGOMenuTheme.wav";
+       
+            jamesMediaPlayer.URL = @"Resources\CSGOMenuTheme.wav";
             jamesMediaPlayer.settings.volume = 10;
             jamesMediaPlayer.settings.setMode("loop", true);
         
@@ -110,7 +110,7 @@ namespace JamesTicTacToe
                 {
 
 
-                    soundEffectPlayer1.URL = AppDomain.CurrentDomain.BaseDirectory + @"sound_rollover.wav";
+                    soundEffectPlayer1.URL =  @"Resources\sound_rollover.wav";
                     jamesMediaPlayer.settings.volume = 10;
 
 
@@ -160,8 +160,8 @@ namespace JamesTicTacToe
 
         private void startGame()
         {
-            jamesMediaPlayer.URL = @"CSGOGameTheme.wav";
-            soundEffectPlayer2.URL = "sound_ready.wav";
+            jamesMediaPlayer.URL = @"Resources\CSGOGameTheme.wav";
+            soundEffectPlayer2.URL = @"Resources\sound_ready.wav";
 
             //if (networkGame)
             //{
@@ -179,9 +179,11 @@ namespace JamesTicTacToe
             }
             else
             {
-
+                isHost = false;
+                isMyTurn = true;
             }
-            
+
+
 
             panelMainMenu.Hide();
             panelNetworkSetup.Hide();
@@ -225,7 +227,7 @@ namespace JamesTicTacToe
 
                 panelRoundWinner.Show();
 
-                soundEffectPlayer1.URL = "sound_draw.wav";
+                soundEffectPlayer1.URL = @"Resources\sound_draw.wav";
 
                 pictureBoxWinningTeam.Image = null;
                 labelRoundWinner.Text = "Round Draw";
@@ -434,15 +436,18 @@ namespace JamesTicTacToe
 
         private void resultTerrorists()
         {
-            soundEffectPlayer1.URL = "sound_TWin.wav";
+            soundEffectPlayer1.settings.volume = 20;
+            soundEffectPlayer1.URL = @"Resources\sound_TWin.wav";
 
             scoreT += 1;
             labelRoundWinner.Text = "Terrorists Win";
+            pictureBoxWinningTeam.Image = Properties.Resources.icon_terrorist;
 
         }
         private void resultCounterTerrorists()
         {
-            soundEffectPlayer1.URL = "sound_CTWin.wav";
+            soundEffectPlayer1.settings.volume = 20;
+            soundEffectPlayer1.URL = @"Resources\sound_CTWin.wav";
 
             scoreCT += 1;
             labelRoundWinner.Text = "Counter-Terrorists Win";
@@ -519,7 +524,7 @@ namespace JamesTicTacToe
 
             pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_3;
             pictureBoxLogoLeftCT.Image = Properties.Resources.icon_CT_1;
-            labelTeamLeft.ForeColor = Color.Gainsboro;
+            labelTeamLeft.ForeColor = Color.LightSkyBlue;
             labelPlayerNameLeft.ForeColor = Color.Gainsboro;
 
 
@@ -534,7 +539,7 @@ namespace JamesTicTacToe
 
             pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_3;
             pictureBoxLogoRightT.Image = Properties.Resources.icon_terrorist;
-            labelTeamRight.ForeColor = Color.Gainsboro;
+            labelTeamRight.ForeColor = Color.Khaki;
             labelPlayerNameRight.ForeColor = Color.Gainsboro;
 
 
@@ -557,7 +562,8 @@ namespace JamesTicTacToe
                     {
                         if (!haveWinner)
                         {
-                            soundEffectPlayer2.URL = @"sound_TClick.wav";
+                            soundEffectPlayer1.settings.volume = 40;
+                            soundEffectPlayer1.URL = @"Resources\sound_TClick.wav";
                         }
 
                         highlightCT();
@@ -566,7 +572,8 @@ namespace JamesTicTacToe
                     {
                         if (!haveWinner)
                         {
-                            soundEffectPlayer2.URL = @"sound_CTClick.wav";
+                            soundEffectPlayer2.settings.volume = 40;
+                            soundEffectPlayer2.URL = @"Resources\sound_CTClick.wav";
                         }
                         highlightT();
 
@@ -578,7 +585,8 @@ namespace JamesTicTacToe
                     {
                         if (!haveWinner)
                         {
-                            soundEffectPlayer2.URL = @"sound_CTClick.wav";
+                            soundEffectPlayer2.settings.volume = 40;
+                            soundEffectPlayer2.URL = @"Resources\sound_CTClick.wav";
                         }
                         highlightT();
                     }
@@ -586,11 +594,42 @@ namespace JamesTicTacToe
                     {
                         if (!haveWinner)
                         {
-                            soundEffectPlayer2.URL = @"sound_TClick.wav";
+                            soundEffectPlayer1.settings.volume = 40;
+                            soundEffectPlayer1.URL = @"Resources\sound_TClick.wav";
                         }
                         highlightCT();
                     }
                 }          
+        }
+
+        private void endGame()
+        {
+            scoreCT = 0;
+            scoreT = 0;
+            buttonScoreCT.Text = scoreCT.ToString();
+            buttonScoreT.Text = scoreT.ToString();
+
+            jamesMediaPlayer.URL = AppDomain.CurrentDomain.BaseDirectory + @"Resources\CSGOMenuTheme.wav";
+
+            labelSelectBack.Visible = false;
+            labelSelectNetwork.Visible = false;
+            labelSelectShared.Visible = false;
+
+            labelSelectPlay.Visible = true;
+            labelSelectCredits.Visible = true;
+            labelSelectExit.Visible = true;
+            labelSelectOptions.Visible = true;
+
+
+            panelMainMenu.Show();
+            //panelNetworkSetup.Show();
+
+            panelGameBoard.Hide();
+            panelLeftPlayerCT.Hide();
+            panelRightPlayerT.Hide();
+            panelScoreTime.Hide();
+
+            this.BackgroundImage = Properties.Resources.form_back_1;
         }
 
         private void timerNextRound_Tick(object sender, EventArgs e)
@@ -626,6 +665,34 @@ namespace JamesTicTacToe
 
             clock.Restart();
             resetBoard();
+
+            if (scoreCT == 9)
+            {
+                DialogResult dialogResult = MessageBox.Show("Counter-Terrorists have won 9 rounds, claiming victory over the Terrorists.\nPlay again?", "Counter-Terrorist Victory", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    scoreCT = 0;
+                    scoreT = 0;
+                }
+                else
+                {
+                    endGame();
+                }
+            }
+            else if (scoreT == 9)
+            {
+                DialogResult dialogResult = MessageBox.Show("Terrorists have won 9 rounds, claiming victory over the Counter-Terrorists.\nPlay again?", "Terrorist Victory", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    scoreCT = 0;
+                    scoreT = 0;
+                }
+                else
+                {
+                    endGame();
+                }
+            }
+            
         }
 
         private void timerClock_Tick(object sender, EventArgs e)
@@ -645,6 +712,42 @@ namespace JamesTicTacToe
                 buttonClock.Text = elapsed;
             }
 
+        }
+
+        private void keyPressed(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+
+                DialogResult dialogResult = MessageBox.Show("Are you sure you want to quit?", "Exit to main menu?", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+
+                    
+                    timerNextRound.Stop();
+                    panelRoundWinner.Hide();
+
+                    for (int i = 0; i < 3; i++)
+                    {
+                        for (int k = 0; k < 3; k++)
+                        {
+                            board[i][k] = 0;
+                        }
+
+                    }
+
+                    isWinner = false;
+                    haveWinner = false;
+
+                    clock.Stop();
+                    resetBoard();
+                    endGame();
+                }
+                else
+                {
+                    return;
+                }
+            }
         }
 
     ///
@@ -669,7 +772,7 @@ namespace JamesTicTacToe
 
             if (canStart == false)
             {
-                soundEffectPlayer2.URL = @"sound_rollover.wav";
+                soundEffectPlayer2.URL = @"Resources\sound_rollover.wav";
             }
 
         }
@@ -694,7 +797,7 @@ namespace JamesTicTacToe
         {
             if (canStart)
             {
-                soundEffectPlayer1.URL = @"sound_rollover.wav";
+                soundEffectPlayer1.URL = @"Resources\sound_rollover.wav";
                 labelSelectGo.Image = Properties.Resources.button_back_green_alt_2;
             }
         }
@@ -709,7 +812,7 @@ namespace JamesTicTacToe
 
         private void pictureButtonCT_Click(object sender, EventArgs e)
         {
-            soundEffectPlayer2.URL = @"sound_click_5.wav";
+            soundEffectPlayer2.URL = @"Resources\sound_click_5.wav";
 
             canStart = true;
             labelSelectGo.Image = Properties.Resources.button_back_green_2;
@@ -730,7 +833,7 @@ namespace JamesTicTacToe
 
         private void pictureButtonT_Click(object sender, EventArgs e)
         {
-            soundEffectPlayer2.URL = @"sound_click_5.wav";
+            soundEffectPlayer2.URL = @"Resources\sound_click_5.wav";
 
             canStart = true;
             labelSelectGo.Image = Properties.Resources.button_back_green_2;
@@ -861,13 +964,16 @@ namespace JamesTicTacToe
         private void labelSelectGeneral_Click(object sender, EventArgs e)
         {
 
-            soundEffectPlayer2.URL = @"sound_click_5.wav";
-            soundEffectPlayer1.settings.volume = 10;
+            soundEffectPlayer2.URL = @"Resources\sound_click_5.wav";
+            //soundEffectPlayer1.settings.volume = 10;
+            
  
 
             if (sender == labelSelectPlay)
             {
-                
+
+                panelHelp.Hide();
+                panelCredits.Hide();
 
                 labelSelectPlay.Visible = false;
                 labelSelectCredits.Visible = false;
@@ -892,6 +998,7 @@ namespace JamesTicTacToe
 
                 panelNetworkSetup.Hide();
                 panelHelp.Hide();
+                panelCredits.Hide();
             }
 
             if (sender == labelSelectShared)
@@ -900,8 +1007,17 @@ namespace JamesTicTacToe
                 startGame();
             }
 
+            if (sender == labelSelectCredits)
+            {
+                panelHelp.Hide();
+                panelCredits.Show();
+                labelSelectExit.Visible = false;
+                labelSelectBack.Visible = true;
+            }
+
             if (sender == labelSelectOptions)
             {
+                panelCredits.Hide();
                 panelHelp.Show();
                 labelSelectExit.Visible = false;
                 labelSelectBack.Visible = true;
@@ -918,8 +1034,6 @@ namespace JamesTicTacToe
                 Close();
             }
         }
-
-
 
 
 

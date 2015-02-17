@@ -49,3 +49,7 @@ C:\Users\james\Documents\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTa
 \\JAMESPC2\Users\james\Documents\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\obj\Debug\JamesTicTacToe.csproj.GenerateResource.Cache
 C:\Users\james\Documents\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\bin\Debug\JamesTextBox.dll
 C:\Users\james\Documents\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\bin\Debug\JamesTextBox.pdb
+C:\Users\james\Documents\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\bin\Debug\JamesTicTacToe.exe.manifest
+C:\Users\james\Documents\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\bin\Debug\JamesTicTacToe.application
+C:\Users\james\Documents\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\obj\Debug\JamesTicTacToe.exe.manifest
+C:\Users\james\Documents\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\obj\Debug\JamesTicTacToe.application

@@ -130,9 +130,6 @@
   <data name="label_back_4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\label_back_4.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="CSGOMenuTheme" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\CSGOMenuTheme.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="button_back_green_alt_2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button_back_green_alt_2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -181,9 +178,6 @@
   <data name="label_back_6" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\label_back_6.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="sound_click_5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sound_click_5.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="portrait_terrorist_alt_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\portrait_terrorist_alt_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -201,9 +195,6 @@
   </data>
   <data name="clear" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\clear.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="sound_rollover" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\sound_rollover.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="portrait_terrorist_3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\portrait_terrorist_3.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

@@ -101,15 +101,6 @@ namespace JamesTicTacToe.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream CSGOMenuTheme {
-            get {
-                return ResourceManager.GetStream("CSGOMenuTheme", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap form_back_1 {
@@ -366,24 +357,6 @@ namespace JamesTicTacToe.Properties {
             get {
                 object obj = ResourceManager.GetObject("score_back_1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream sound_click_5 {
-            get {
-                return ResourceManager.GetStream("sound_click_5", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream sound_rollover {
-            get {
-                return ResourceManager.GetStream("sound_rollover", resourceCulture);
             }
         }
     }
