@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Diagnostics;
 using System.Text.RegularExpressions;
 using System.Media;
-
+using System.Runtime.InteropServices;
 
 namespace JamesTicTacToe
 {
@@ -41,22 +41,20 @@ namespace JamesTicTacToe
         private int scoreCT = 0;
 
 
+
         public JamesForm()
         {
             InitializeComponent();
 
 
+
+
+
             jamesMediaPlayer.URL = AppDomain.CurrentDomain.BaseDirectory + @"CSGOMenuTheme.wav";
             jamesMediaPlayer.settings.volume = 10;
             jamesMediaPlayer.settings.setMode("loop", true);
-            
+        
 
-            
-            //jamesMediaPlayer.URL = Properties.Resources.CS
-
-            //clock.Start();
-            
-            //resetBoard();
             buttonScoreT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             buttonScoreCT.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             buttonClock.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
@@ -64,6 +62,20 @@ namespace JamesTicTacToe
             buttonScoreCT.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
             buttonClock.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
         }
+
+        [DllImport("user32.dll")]
+        [return: MarshalAs(UnmanagedType.Bool)]
+        static extern bool ShowScrollBar(IntPtr hWnd, int wBar, bool bShow);
+
+        private enum ScrollBarDirection
+        {
+            SB_HORZ = 0,
+            SB_VERT = 1,
+            SB_CTL = 2,
+            SB_BOTH = 3
+        }
+
+
 
         protected override CreateParams CreateParams
         {
@@ -97,15 +109,10 @@ namespace JamesTicTacToe
                 try
                 {
 
-                   // jamesSoundPlayer.Stream = Properties.Resources.sound_rollover;
-                  //  jamesSoundPlayer.PlaySync();
 
                     soundEffectPlayer1.URL = AppDomain.CurrentDomain.BaseDirectory + @"sound_rollover.wav";
                     jamesMediaPlayer.settings.volume = 10;
-                   // jamesMediaPlayer.settings.setMode("loop", true);
 
-                   // mouseEnterSoundPlayer.
-                    //mouseEnterSoundPlayer.Play();
 
                 }
                 catch(Exception ex)
@@ -154,16 +161,17 @@ namespace JamesTicTacToe
         private void startGame()
         {
             jamesMediaPlayer.URL = @"CSGOGameTheme.wav";
+            soundEffectPlayer2.URL = "sound_ready.wav";
 
             //if (networkGame)
             //{
             //    isMyTurn = isHost;
             //}
 
-            timerWaiting.Start();
+
             timerClock.Start();
             clock.Start();
-            labelWaitingCT.Visible = true;
+
 
             if (networkGame)
             {
@@ -192,8 +200,43 @@ namespace JamesTicTacToe
             labelPlayerNameRight.ForeColor = Color.Gray;
         }
 
+        private void testDraw()
+        {
+            int testDraw = 0;
+
+            for (int i = 0; i < 3; i++)
+            {
+                for (int k = 0; k < 3; k++)
+                {
+
+                    if (board[i][k] != 0)
+                    {
+                        testDraw += 1;
+                    }
+                }
+            }
+
+            if (testDraw == 9)
+            {
+                haveWinner = true;
+                timerNextRound.Start();
+                clock.Restart();
+                buttonClock.ForeColor = Color.Red;
+
+                panelRoundWinner.Show();
+
+                soundEffectPlayer1.URL = "sound_draw.wav";
+
+                pictureBoxWinningTeam.Image = null;
+                labelRoundWinner.Text = "Round Draw";
+
+
+            }
+        }
+
         private void resetBoard()
         {
+            
             
             g00.Image = mapping[board[0][0]];
             g01.Image = mapping[board[0][1]];
@@ -204,6 +247,8 @@ namespace JamesTicTacToe
             g20.Image = mapping[board[2][0]];
             g21.Image = mapping[board[2][1]];
             g22.Image = mapping[board[2][2]];
+
+ 
         }
 
         private void SetEnabled(bool value)
@@ -318,6 +363,8 @@ namespace JamesTicTacToe
                     }
                 }
 
+                testDraw();
+
                 if (haveWinner)
                 {
                     timerNextRound.Start();
@@ -377,8 +424,6 @@ namespace JamesTicTacToe
                     buttonScoreT.Text = scoreT.ToString();
                     buttonScoreCT.Text = scoreCT.ToString();
 
-                    labelWaitingT.Visible = false;
-                    labelWaitingCT.Visible = false;
                 }
             }
             else
@@ -393,7 +438,7 @@ namespace JamesTicTacToe
 
             scoreT += 1;
             labelRoundWinner.Text = "Terrorists Win";
-            pictureBoxWinningTeam.Image = Properties.Resources.icon_terrorist;
+
         }
         private void resultCounterTerrorists()
         {
@@ -431,14 +476,7 @@ namespace JamesTicTacToe
                 {
                     if (networkGame)
                     {
-                        if (isHost)
-                        {
-                            soundEffectPlayer2.URL = @"sound_CTClick.wav";
-                        }
-                        else
-                        {
-                            soundEffectPlayer2.URL = @"sound_TClick.wav";
-                        }
+
 
                         setBoardBasedOnBoxName(((PictureBox)sender).Name);
                         
@@ -452,11 +490,11 @@ namespace JamesTicTacToe
                     {
                         if (isHost)
                         {
-                            soundEffectPlayer2.URL = @"sound_TClick.wav";
+                           // soundEffectPlayer2.URL = @"sound_TClick.wav";
                         }
                         else
                         {
-                            soundEffectPlayer2.URL = @"sound_CTClick.wav";
+                            //soundEffectPlayer1.URL = @"sound_CTClick.wav";
                         }
 
                         swapPlayerHighlight();
@@ -484,9 +522,7 @@ namespace JamesTicTacToe
             labelTeamLeft.ForeColor = Color.Gainsboro;
             labelPlayerNameLeft.ForeColor = Color.Gainsboro;
 
-            labelWaitingCT.Visible = true;
-            labelWaitingT.Visible = false;
-            labelWaitingCT.Text = "";
+
         }
 
         private void highlightT()
@@ -501,9 +537,7 @@ namespace JamesTicTacToe
             labelTeamRight.ForeColor = Color.Gainsboro;
             labelPlayerNameRight.ForeColor = Color.Gainsboro;
 
-            labelWaitingCT.Visible = false;
-            labelWaitingT.Visible = true;
-            labelWaitingT.Text = "";
+
         }
 
         private void swapPlayerHighlight()
@@ -517,30 +551,46 @@ namespace JamesTicTacToe
             //if client(T) clicks box, set T to grey and CT to normal on both apps
 
             //
-            if (isHost)
-            {
-                if (isMyTurn)
+                if (isHost)
                 {
+                    if (isMyTurn)
+                    {
+                        if (!haveWinner)
+                        {
+                            soundEffectPlayer2.URL = @"sound_TClick.wav";
+                        }
 
-                    highlightCT();
+                        highlightCT();
+                    }
+                    else
+                    {
+                        if (!haveWinner)
+                        {
+                            soundEffectPlayer2.URL = @"sound_CTClick.wav";
+                        }
+                        highlightT();
+
+                    }
                 }
                 else
                 {
-                    highlightT();
-
-                }
-            }
-            else
-            {
-                if (isMyTurn)
-                {
-                    highlightT();
-                }
-                else
-                {
-                    highlightCT();
-                }
-            }          
+                    if (isMyTurn)
+                    {
+                        if (!haveWinner)
+                        {
+                            soundEffectPlayer2.URL = @"sound_CTClick.wav";
+                        }
+                        highlightT();
+                    }
+                    else
+                    {
+                        if (!haveWinner)
+                        {
+                            soundEffectPlayer2.URL = @"sound_TClick.wav";
+                        }
+                        highlightCT();
+                    }
+                }          
         }
 
         private void timerNextRound_Tick(object sender, EventArgs e)
@@ -644,6 +694,7 @@ namespace JamesTicTacToe
         {
             if (canStart)
             {
+                soundEffectPlayer1.URL = @"sound_rollover.wav";
                 labelSelectGo.Image = Properties.Resources.button_back_green_alt_2;
             }
         }
@@ -658,6 +709,8 @@ namespace JamesTicTacToe
 
         private void pictureButtonCT_Click(object sender, EventArgs e)
         {
+            soundEffectPlayer2.URL = @"sound_click_5.wav";
+
             canStart = true;
             labelSelectGo.Image = Properties.Resources.button_back_green_2;
 
@@ -677,6 +730,8 @@ namespace JamesTicTacToe
 
         private void pictureButtonT_Click(object sender, EventArgs e)
         {
+            soundEffectPlayer2.URL = @"sound_click_5.wav";
+
             canStart = true;
             labelSelectGo.Image = Properties.Resources.button_back_green_2;
 
@@ -707,7 +762,7 @@ namespace JamesTicTacToe
                 if (checkIPandPort(textBoxIP.Text, textBoxPort.Text))
                 {
 
-                    soundEffectPlayer2.URL = "sound_ready.wav";
+                    
                     networkGame = true;
                     if (isHost)
                     {
@@ -787,6 +842,8 @@ namespace JamesTicTacToe
                 else
                 {
                     SetEnabled(false);
+
+
      
                     GetDataFromOthers();
                 }
@@ -799,24 +856,7 @@ namespace JamesTicTacToe
             }
         }
 
-        private void timer1_Tick(object sender, EventArgs e)
-        {
 
-
-            labelWaitingCT.Text += " .";
-
-            if (labelWaitingCT.Text == " . . . .")
-            {
-                labelWaitingCT.Text = " .";
-            }
-
-            labelWaitingT.Text += " .";
-
-            if (labelWaitingT.Text == " . . . .")
-            {
-                labelWaitingT.Text = " .";
-            }
-        }
 
         private void labelSelectGeneral_Click(object sender, EventArgs e)
         {
@@ -851,6 +891,7 @@ namespace JamesTicTacToe
                 labelSelectBack.Visible = false;
 
                 panelNetworkSetup.Hide();
+                panelHelp.Hide();
             }
 
             if (sender == labelSelectShared)
@@ -859,12 +900,27 @@ namespace JamesTicTacToe
                 startGame();
             }
 
+            if (sender == labelSelectOptions)
+            {
+                panelHelp.Show();
+                labelSelectExit.Visible = false;
+                labelSelectBack.Visible = true;
+            }
+
             if (sender ==  labelSelectNetwork)
             {
                 panelNetworkSetup.Show();
                 panelNetworkSetup.BringToFront();
             }
+
+            if (sender == labelSelectExit)
+            {
+                Close();
+            }
         }
+
+
+
 
 
     ///

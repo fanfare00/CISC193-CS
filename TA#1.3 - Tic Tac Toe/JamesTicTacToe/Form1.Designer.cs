@@ -39,13 +39,11 @@
             this.labelSelectNetwork = new System.Windows.Forms.Label();
             this.labelSelectBack = new System.Windows.Forms.Label();
             this.panelLeftPlayerCT = new System.Windows.Forms.Panel();
-            this.labelWaitingCT = new System.Windows.Forms.Label();
             this.pictureBoxPortraitLeftCT = new System.Windows.Forms.PictureBox();
             this.labelTeamLeft = new System.Windows.Forms.Label();
             this.labelPlayerNameLeft = new System.Windows.Forms.Label();
             this.pictureBoxLogoLeftCT = new System.Windows.Forms.PictureBox();
             this.panelRightPlayerT = new System.Windows.Forms.Panel();
-            this.labelWaitingT = new System.Windows.Forms.Label();
             this.pictureBoxPortraitRightT = new System.Windows.Forms.PictureBox();
             this.pictureBoxLogoRightT = new System.Windows.Forms.PictureBox();
             this.labelTeamRight = new System.Windows.Forms.Label();
@@ -71,21 +69,23 @@
             this.timerClock = new System.Windows.Forms.Timer(this.components);
             this.panelNetworkSetup = new System.Windows.Forms.Panel();
             this.labelSelectGo = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
+            this.labelChooseTeam = new System.Windows.Forms.Label();
+            this.labelClient = new System.Windows.Forms.Label();
+            this.labelHost = new System.Windows.Forms.Label();
             this.labelNetworkNameT = new System.Windows.Forms.Label();
             this.labelNetworkNameCT = new System.Windows.Forms.Label();
             this.textBoxPort = new System.Windows.Forms.TextBox();
             this.textBoxIP = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.labelPort = new System.Windows.Forms.Label();
+            this.labelIP = new System.Windows.Forms.Label();
             this.pictureButtonT = new System.Windows.Forms.PictureBox();
             this.pictureButtonCT = new System.Windows.Forms.PictureBox();
-            this.timerWaiting = new System.Windows.Forms.Timer(this.components);
-            this.jamesMediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
-            this.soundEffectPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.panelHelp = new System.Windows.Forms.Panel();
+            this.labelHelpHeader = new System.Windows.Forms.Label();
             this.soundEffectPlayer2 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.soundEffectPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
+            this.jamesMediaPlayer = new AxWMPLib.AxWindowsMediaPlayer();
+            this.jamesTextBox1 = new JamesCustomControls.JamesTextBox();
             this.panelMainMenu.SuspendLayout();
             this.panelLeftPlayerCT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPortraitLeftCT)).BeginInit();
@@ -109,21 +109,22 @@
             this.panelNetworkSetup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureButtonT)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureButtonCT)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jamesMediaPlayer)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.soundEffectPlayer1)).BeginInit();
+            this.panelHelp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.soundEffectPlayer2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soundEffectPlayer1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jamesMediaPlayer)).BeginInit();
             this.SuspendLayout();
             // 
             // panelMainMenu
             // 
             this.panelMainMenu.BackColor = System.Drawing.Color.Transparent;
-            this.panelMainMenu.Controls.Add(this.labelSelectOptions);
-            this.panelMainMenu.Controls.Add(this.labelSelectCredits);
             this.panelMainMenu.Controls.Add(this.labelSelectExit);
-            this.panelMainMenu.Controls.Add(this.labelSelectShared);
-            this.panelMainMenu.Controls.Add(this.labelSelectPlay);
             this.panelMainMenu.Controls.Add(this.labelSelectNetwork);
             this.panelMainMenu.Controls.Add(this.labelSelectBack);
+            this.panelMainMenu.Controls.Add(this.labelSelectCredits);
+            this.panelMainMenu.Controls.Add(this.labelSelectOptions);
+            this.panelMainMenu.Controls.Add(this.labelSelectShared);
+            this.panelMainMenu.Controls.Add(this.labelSelectPlay);
             this.panelMainMenu.Location = new System.Drawing.Point(61, 233);
             this.panelMainMenu.Name = "panelMainMenu";
             this.panelMainMenu.Size = new System.Drawing.Size(220, 151);
@@ -139,7 +140,7 @@
             this.labelSelectOptions.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.labelSelectOptions.Size = new System.Drawing.Size(247, 19);
             this.labelSelectOptions.TabIndex = 52;
-            this.labelSelectOptions.Text = "HELP AND OPTIONS";
+            this.labelSelectOptions.Text = "HELP &&  OPTIONS";
             this.labelSelectOptions.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.labelSelectOptions.Click += new System.EventHandler(this.labelSelectGeneral_Click);
             this.labelSelectOptions.MouseEnter += new System.EventHandler(this.label_Highlight);
@@ -182,7 +183,7 @@
             this.labelSelectShared.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSelectShared.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelSelectShared.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.labelSelectShared.Location = new System.Drawing.Point(3, 48);
+            this.labelSelectShared.Location = new System.Drawing.Point(3, 74);
             this.labelSelectShared.Margin = new System.Windows.Forms.Padding(3);
             this.labelSelectShared.Name = "labelSelectShared";
             this.labelSelectShared.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
@@ -217,7 +218,7 @@
             this.labelSelectNetwork.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSelectNetwork.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelSelectNetwork.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.labelSelectNetwork.Location = new System.Drawing.Point(3, 74);
+            this.labelSelectNetwork.Location = new System.Drawing.Point(3, 101);
             this.labelSelectNetwork.Margin = new System.Windows.Forms.Padding(3);
             this.labelSelectNetwork.Name = "labelSelectNetwork";
             this.labelSelectNetwork.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
@@ -235,7 +236,7 @@
             this.labelSelectBack.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelSelectBack.ForeColor = System.Drawing.Color.Gainsboro;
             this.labelSelectBack.ImageAlign = System.Drawing.ContentAlignment.TopLeft;
-            this.labelSelectBack.Location = new System.Drawing.Point(3, 101);
+            this.labelSelectBack.Location = new System.Drawing.Point(3, 127);
             this.labelSelectBack.Name = "labelSelectBack";
             this.labelSelectBack.Padding = new System.Windows.Forms.Padding(0, 1, 0, 0);
             this.labelSelectBack.Size = new System.Drawing.Size(214, 19);
@@ -252,7 +253,6 @@
             this.panelLeftPlayerCT.BackColor = System.Drawing.Color.Transparent;
             this.panelLeftPlayerCT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelLeftPlayerCT.BackgroundImage")));
             this.panelLeftPlayerCT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panelLeftPlayerCT.Controls.Add(this.labelWaitingCT);
             this.panelLeftPlayerCT.Controls.Add(this.pictureBoxPortraitLeftCT);
             this.panelLeftPlayerCT.Controls.Add(this.labelTeamLeft);
             this.panelLeftPlayerCT.Controls.Add(this.labelPlayerNameLeft);
@@ -262,17 +262,6 @@
             this.panelLeftPlayerCT.Size = new System.Drawing.Size(200, 312);
             this.panelLeftPlayerCT.TabIndex = 62;
             this.panelLeftPlayerCT.Visible = false;
-            // 
-            // labelWaitingCT
-            // 
-            this.labelWaitingCT.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWaitingCT.ForeColor = System.Drawing.Color.LightSkyBlue;
-            this.labelWaitingCT.Location = new System.Drawing.Point(0, 98);
-            this.labelWaitingCT.Name = "labelWaitingCT";
-            this.labelWaitingCT.Size = new System.Drawing.Size(200, 34);
-            this.labelWaitingCT.TabIndex = 68;
-            this.labelWaitingCT.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelWaitingCT.Visible = false;
             // 
             // pictureBoxPortraitLeftCT
             // 
@@ -325,7 +314,6 @@
             this.panelRightPlayerT.BackColor = System.Drawing.Color.Transparent;
             this.panelRightPlayerT.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelRightPlayerT.BackgroundImage")));
             this.panelRightPlayerT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panelRightPlayerT.Controls.Add(this.labelWaitingT);
             this.panelRightPlayerT.Controls.Add(this.pictureBoxPortraitRightT);
             this.panelRightPlayerT.Controls.Add(this.pictureBoxLogoRightT);
             this.panelRightPlayerT.Controls.Add(this.labelTeamRight);
@@ -335,17 +323,6 @@
             this.panelRightPlayerT.Size = new System.Drawing.Size(200, 312);
             this.panelRightPlayerT.TabIndex = 63;
             this.panelRightPlayerT.Visible = false;
-            // 
-            // labelWaitingT
-            // 
-            this.labelWaitingT.Font = new System.Drawing.Font("Times New Roman", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelWaitingT.ForeColor = System.Drawing.Color.Khaki;
-            this.labelWaitingT.Location = new System.Drawing.Point(0, 99);
-            this.labelWaitingT.Name = "labelWaitingT";
-            this.labelWaitingT.Size = new System.Drawing.Size(200, 34);
-            this.labelWaitingT.TabIndex = 69;
-            this.labelWaitingT.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.labelWaitingT.Visible = false;
             // 
             // pictureBoxPortraitRightT
             // 
@@ -638,15 +615,15 @@
             this.panelNetworkSetup.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelNetworkSetup.BackgroundImage")));
             this.panelNetworkSetup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelNetworkSetup.Controls.Add(this.labelSelectGo);
-            this.panelNetworkSetup.Controls.Add(this.label7);
-            this.panelNetworkSetup.Controls.Add(this.label6);
-            this.panelNetworkSetup.Controls.Add(this.label5);
+            this.panelNetworkSetup.Controls.Add(this.labelChooseTeam);
+            this.panelNetworkSetup.Controls.Add(this.labelClient);
+            this.panelNetworkSetup.Controls.Add(this.labelHost);
             this.panelNetworkSetup.Controls.Add(this.labelNetworkNameT);
             this.panelNetworkSetup.Controls.Add(this.labelNetworkNameCT);
             this.panelNetworkSetup.Controls.Add(this.textBoxPort);
             this.panelNetworkSetup.Controls.Add(this.textBoxIP);
-            this.panelNetworkSetup.Controls.Add(this.label2);
-            this.panelNetworkSetup.Controls.Add(this.label1);
+            this.panelNetworkSetup.Controls.Add(this.labelPort);
+            this.panelNetworkSetup.Controls.Add(this.labelIP);
             this.panelNetworkSetup.Controls.Add(this.pictureButtonT);
             this.panelNetworkSetup.Controls.Add(this.pictureButtonCT);
             this.panelNetworkSetup.Location = new System.Drawing.Point(290, 79);
@@ -670,38 +647,38 @@
             this.labelSelectGo.MouseEnter += new System.EventHandler(this.labelSelectGo_Enter);
             this.labelSelectGo.MouseLeave += new System.EventHandler(this.labelSelectGo_Leave);
             // 
-            // label7
+            // labelChooseTeam
             // 
-            this.label7.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label7.Location = new System.Drawing.Point(0, 101);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(457, 19);
-            this.label7.TabIndex = 10;
-            this.label7.Text = "CHOOSE A TEAM";
-            this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelChooseTeam.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelChooseTeam.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelChooseTeam.Location = new System.Drawing.Point(0, 101);
+            this.labelChooseTeam.Name = "labelChooseTeam";
+            this.labelChooseTeam.Size = new System.Drawing.Size(457, 19);
+            this.labelChooseTeam.TabIndex = 10;
+            this.labelChooseTeam.Text = "CHOOSE A TEAM";
+            this.labelChooseTeam.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label6
+            // labelClient
             // 
-            this.label6.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label6.Location = new System.Drawing.Point(290, 320);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 16);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "(CLIENT)";
-            this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelClient.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelClient.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelClient.Location = new System.Drawing.Point(290, 320);
+            this.labelClient.Name = "labelClient";
+            this.labelClient.Size = new System.Drawing.Size(125, 16);
+            this.labelClient.TabIndex = 9;
+            this.labelClient.Text = "(CLIENT)";
+            this.labelClient.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label5
+            // labelHost
             // 
-            this.label5.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label5.Location = new System.Drawing.Point(47, 320);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(125, 16);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "(HOST)";
-            this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.labelHost.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold);
+            this.labelHost.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelHost.Location = new System.Drawing.Point(47, 320);
+            this.labelHost.Name = "labelHost";
+            this.labelHost.Size = new System.Drawing.Size(125, 16);
+            this.labelHost.TabIndex = 8;
+            this.labelHost.Text = "(HOST)";
+            this.labelHost.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelNetworkNameT
             // 
@@ -728,45 +705,43 @@
             // textBoxPort
             // 
             this.textBoxPort.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPort.Location = new System.Drawing.Point(82, 44);
+            this.textBoxPort.Location = new System.Drawing.Point(84, 42);
             this.textBoxPort.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxPort.Name = "textBoxPort";
             this.textBoxPort.Size = new System.Drawing.Size(50, 23);
             this.textBoxPort.TabIndex = 2;
-            this.textBoxPort.Text = "4100";
             // 
             // textBoxIP
             // 
             this.textBoxIP.BackColor = System.Drawing.SystemColors.Window;
             this.textBoxIP.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxIP.Location = new System.Drawing.Point(82, 15);
+            this.textBoxIP.Location = new System.Drawing.Point(84, 13);
             this.textBoxIP.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxIP.Name = "textBoxIP";
             this.textBoxIP.Size = new System.Drawing.Size(141, 23);
             this.textBoxIP.TabIndex = 1;
-            this.textBoxIP.Text = "192.168.2.17";
             // 
-            // label2
+            // labelPort
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label2.Location = new System.Drawing.Point(15, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 19);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "PORT:";
+            this.labelPort.AutoSize = true;
+            this.labelPort.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelPort.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelPort.Location = new System.Drawing.Point(17, 42);
+            this.labelPort.Name = "labelPort";
+            this.labelPort.Size = new System.Drawing.Size(61, 19);
+            this.labelPort.TabIndex = 3;
+            this.labelPort.Text = "PORT:";
             // 
-            // label1
+            // labelIP
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Gainsboro;
-            this.label1.Location = new System.Drawing.Point(43, 15);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(33, 19);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "IP:";
+            this.labelIP.AutoSize = true;
+            this.labelIP.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIP.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelIP.Location = new System.Drawing.Point(45, 13);
+            this.labelIP.Name = "labelIP";
+            this.labelIP.Size = new System.Drawing.Size(33, 19);
+            this.labelIP.TabIndex = 2;
+            this.labelIP.Text = "IP:";
             // 
             // pictureButtonT
             // 
@@ -797,30 +772,29 @@
             this.pictureButtonCT.MouseEnter += new System.EventHandler(this.pictureButton_Enter);
             this.pictureButtonCT.MouseLeave += new System.EventHandler(this.pictureButton_Leave);
             // 
-            // timerWaiting
+            // panelHelp
             // 
-            this.timerWaiting.Interval = 800;
-            this.timerWaiting.Tick += new System.EventHandler(this.timer1_Tick);
+            this.panelHelp.BackColor = System.Drawing.Color.Transparent;
+            this.panelHelp.BackgroundImage = global::JamesTicTacToe.Properties.Resources.panel_back_large;
+            this.panelHelp.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelHelp.Controls.Add(this.jamesTextBox1);
+            this.panelHelp.Controls.Add(this.labelHelpHeader);
+            this.panelHelp.Location = new System.Drawing.Point(284, 79);
+            this.panelHelp.Name = "panelHelp";
+            this.panelHelp.Size = new System.Drawing.Size(457, 419);
+            this.panelHelp.TabIndex = 12;
+            this.panelHelp.Visible = false;
             // 
-            // jamesMediaPlayer
+            // labelHelpHeader
             // 
-            this.jamesMediaPlayer.Enabled = true;
-            this.jamesMediaPlayer.Location = new System.Drawing.Point(12, 503);
-            this.jamesMediaPlayer.Name = "jamesMediaPlayer";
-            this.jamesMediaPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("jamesMediaPlayer.OcxState")));
-            this.jamesMediaPlayer.Size = new System.Drawing.Size(42, 46);
-            this.jamesMediaPlayer.TabIndex = 68;
-            this.jamesMediaPlayer.Visible = false;
-            // 
-            // soundEffectPlayer1
-            // 
-            this.soundEffectPlayer1.Enabled = true;
-            this.soundEffectPlayer1.Location = new System.Drawing.Point(60, 503);
-            this.soundEffectPlayer1.Name = "soundEffectPlayer1";
-            this.soundEffectPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("soundEffectPlayer1.OcxState")));
-            this.soundEffectPlayer1.Size = new System.Drawing.Size(42, 46);
-            this.soundEffectPlayer1.TabIndex = 69;
-            this.soundEffectPlayer1.Visible = false;
+            this.labelHelpHeader.Font = new System.Drawing.Font("Tahoma", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelHelpHeader.ForeColor = System.Drawing.Color.Gainsboro;
+            this.labelHelpHeader.Location = new System.Drawing.Point(7, 8);
+            this.labelHelpHeader.Name = "labelHelpHeader";
+            this.labelHelpHeader.Size = new System.Drawing.Size(447, 35);
+            this.labelHelpHeader.TabIndex = 1;
+            this.labelHelpHeader.Text = "HELP && OPTIONS";
+            this.labelHelpHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // soundEffectPlayer2
             // 
@@ -832,17 +806,51 @@
             this.soundEffectPlayer2.TabIndex = 70;
             this.soundEffectPlayer2.Visible = false;
             // 
+            // soundEffectPlayer1
+            // 
+            this.soundEffectPlayer1.Enabled = true;
+            this.soundEffectPlayer1.Location = new System.Drawing.Point(60, 503);
+            this.soundEffectPlayer1.Name = "soundEffectPlayer1";
+            this.soundEffectPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("soundEffectPlayer1.OcxState")));
+            this.soundEffectPlayer1.Size = new System.Drawing.Size(42, 46);
+            this.soundEffectPlayer1.TabIndex = 69;
+            this.soundEffectPlayer1.Visible = false;
+            // 
+            // jamesMediaPlayer
+            // 
+            this.jamesMediaPlayer.Enabled = true;
+            this.jamesMediaPlayer.Location = new System.Drawing.Point(12, 503);
+            this.jamesMediaPlayer.Name = "jamesMediaPlayer";
+            this.jamesMediaPlayer.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("jamesMediaPlayer.OcxState")));
+            this.jamesMediaPlayer.Size = new System.Drawing.Size(42, 46);
+            this.jamesMediaPlayer.TabIndex = 68;
+            this.jamesMediaPlayer.Visible = false;
+            // 
+            // jamesTextBox1
+            // 
+            this.jamesTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.jamesTextBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.jamesTextBox1.ForeColor = System.Drawing.Color.Gainsboro;
+            this.jamesTextBox1.Location = new System.Drawing.Point(11, 48);
+            this.jamesTextBox1.Name = "jamesTextBox1";
+            this.jamesTextBox1.ReadOnly = true;
+            this.jamesTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.ForcedVertical;
+            this.jamesTextBox1.Size = new System.Drawing.Size(446, 371);
+            this.jamesTextBox1.TabIndex = 71;
+            this.jamesTextBox1.Text = resources.GetString("jamesTextBox1.Text");
+            // 
             // JamesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::JamesTicTacToe.Properties.Resources.form_back_1;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.panelHelp);
+            this.Controls.Add(this.panelNetworkSetup);
             this.Controls.Add(this.soundEffectPlayer2);
             this.Controls.Add(this.soundEffectPlayer1);
             this.Controls.Add(this.jamesMediaPlayer);
             this.Controls.Add(this.panelRightPlayerT);
-            this.Controls.Add(this.panelNetworkSetup);
             this.Controls.Add(this.panelRoundWinner);
             this.Controls.Add(this.panelScoreTime);
             this.Controls.Add(this.panelGameBoard);
@@ -878,9 +886,10 @@
             this.panelNetworkSetup.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureButtonT)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureButtonCT)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jamesMediaPlayer)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.soundEffectPlayer1)).EndInit();
+            this.panelHelp.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.soundEffectPlayer2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.soundEffectPlayer1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.jamesMediaPlayer)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -926,23 +935,23 @@
         private System.Windows.Forms.Label labelSelectShared;
         private System.Windows.Forms.Panel panelNetworkSetup;
         private System.Windows.Forms.Label labelSelectGo;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelChooseTeam;
+        private System.Windows.Forms.Label labelClient;
+        private System.Windows.Forms.Label labelHost;
         private System.Windows.Forms.Label labelNetworkNameT;
         private System.Windows.Forms.Label labelNetworkNameCT;
         private System.Windows.Forms.TextBox textBoxPort;
         private System.Windows.Forms.TextBox textBoxIP;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label labelPort;
+        private System.Windows.Forms.Label labelIP;
         private System.Windows.Forms.PictureBox pictureButtonT;
         private System.Windows.Forms.PictureBox pictureButtonCT;
-        private System.Windows.Forms.Label labelWaitingCT;
-        private System.Windows.Forms.Timer timerWaiting;
-        private System.Windows.Forms.Label labelWaitingT;
         private AxWMPLib.AxWindowsMediaPlayer jamesMediaPlayer;
         private AxWMPLib.AxWindowsMediaPlayer soundEffectPlayer1;
         private AxWMPLib.AxWindowsMediaPlayer soundEffectPlayer2;
+        private System.Windows.Forms.Panel panelHelp;
+        private System.Windows.Forms.Label labelHelpHeader;
+        private JamesCustomControls.JamesTextBox jamesTextBox1;
     }
 }
 

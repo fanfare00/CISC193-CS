@@ -645,10 +645,7 @@
         9o8wq5PF2YerFi7CWP0ALl374D8FF0/tTdgqjQAAAABJRU5ErkJggg==
 </value>
   </data>
-  <metadata name="timerWaiting.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>269, 17</value>
-  </metadata>
-  <data name="jamesMediaPlayer.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="soundEffectPlayer2.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
@@ -670,7 +667,7 @@
         AAAL
 </value>
   </data>
-  <data name="soundEffectPlayer2.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
+  <data name="jamesMediaPlayer.OcxState" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACFTeXN0
@@ -679,6 +676,29 @@
         AAAAAAMAAQAAAAsA//8DAAAAAAALAP//CAACAAAAAAADADIAAAALAAAACAAKAAAAZgB1AGwAbAAAAAsA
         AAALAAAACwD//wsA//8LAAAACAACAAAAAAAIAAIAAAAAAAgAAgAAAAAACAACAAAAAAALAAAAwAcAAGEC
         AAAL
+</value>
+  </data>
+  <data name="jamesTextBox1.Text" xml:space="preserve">
+    <value>                                HOW TO PLAY
+
+Tic-Tac: Global Offensive is a two player game where the players take turns claiming their spaces on a 3x3 grid. 
+
+The player who succeeds in placing three respective marks in a horizontal, vertical, or diagonal row wins the round. 
+
+The hosting player will always get to make the first move on the first round unless in shared keyboard play, in which case its always Player 1. 
+
+At the end of each round, the winning player will be granted the first move on the consecutive round. 
+
+Each match is in the best of 16 format, with the first player to reach 8 round victories winning the game. 
+
+                           NETWORK PLAY
+
+Make sure that both player's computers are networked properly. Designate one player to be the host (CT) and the other to be the client (T). Enter the network address of the host into the box labeled "IP", choose a port, and then press the go button.
+
+Example:
+    IP:         192.168.1.1
+    PORT:   4000
+
 </value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

@@ -252,9 +252,49 @@ namespace JamesTicTacToe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap label_header_large {
+            get {
+                object obj = ResourceManager.GetObject("label_header_large", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap label_header_large1 {
+            get {
+                object obj = ResourceManager.GetObject("label_header_large1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap panel_back_8 {
             get {
                 object obj = ResourceManager.GetObject("panel_back_8", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap panel_back_large {
+            get {
+                object obj = ResourceManager.GetObject("panel_back_large", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap panel_back_large_2 {
+            get {
+                object obj = ResourceManager.GetObject("panel_back_large_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -35,6 +35,9 @@
     <ApplicationIcon>csgo.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="JamesTextBox">
+      <HintPath>..\..\..\..\..\Desktop\JamesTextBox\JamesTextBox\bin\Debug\JamesTextBox.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -61,6 +64,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
     <Compile Include="SocketManagement.cs" />
+    <Compile Include="TransparentTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,6 +180,10 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="csgo.ico" />
+    <None Include="Resources\label_header_large1.png" />
+    <None Include="Resources\label_header_large.png" />
+    <None Include="Resources\panel_back_large_2.png" />
+    <None Include="Resources\panel_back_large.png" />
     <None Include="Resources\sound_rollover.wav" />
     <None Include="Resources\sound_click_5.wav" />
     <None Include="Resources\sound_click_3.wav" />
