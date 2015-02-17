@@ -53,3 +53,6 @@ C:\Users\james\Documents\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTa
 C:\Users\james\Documents\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\bin\Debug\JamesTicTacToe.application
 C:\Users\james\Documents\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\obj\Debug\JamesTicTacToe.exe.manifest
 C:\Users\james\Documents\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\obj\Debug\JamesTicTacToe.application
+C:\Users\james\Desktop\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\obj\Debug\Interop.WMPLib.dll
+C:\Users\james\Desktop\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\obj\Debug\AxInterop.WMPLib.dll
+C:\Users\james\Desktop\CompSci 2015\CISC193-CS\TA#1.3 - Tic Tac Toe\JamesTicTacToe\obj\Debug\JamesTicTacToe.csproj.ResolveComReference.cache
