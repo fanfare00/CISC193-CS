@@ -202,7 +202,30 @@ namespace JamesTicTacToe
             labelPlayerNameRight.ForeColor = Color.Gray;
         }
 
-        private void testDraw()
+        private void resultDraw()
+        {
+            haveWinner = false;
+            if (networkGame)
+            {
+                isWinner = isHost;
+                highlightCT();
+                
+            }
+            haveWinner = true;
+
+            timerNextRound.Start();
+            clock.Restart();
+            buttonClock.ForeColor = Color.Red;
+
+            panelRoundWinner.Show();
+
+            soundEffectPlayer1.URL = @"Resources\sound_draw.wav";
+
+            pictureBoxWinningTeam.Image = null;
+            labelRoundWinner.Text = "Round Draw";
+        }
+
+        private bool testDraw()
         {
             int testDraw = 0;
 
@@ -220,20 +243,9 @@ namespace JamesTicTacToe
 
             if (testDraw == 9)
             {
-                haveWinner = true;
-                timerNextRound.Start();
-                clock.Restart();
-                buttonClock.ForeColor = Color.Red;
-
-                panelRoundWinner.Show();
-
-                soundEffectPlayer1.URL = @"Resources\sound_draw.wav";
-
-                pictureBoxWinningTeam.Image = null;
-                labelRoundWinner.Text = "Round Draw";
-
-
+                return true;
             }
+            return false;
         }
 
         private void resetBoard()
@@ -365,10 +377,15 @@ namespace JamesTicTacToe
                     }
                 }
 
-                testDraw();
-
-                if (haveWinner)
+                if (testDraw() && (haveWinner == false))
                 {
+                    //Close();
+                    resultDraw();
+                    
+                }
+                else if (haveWinner)
+                {
+
                     timerNextRound.Start();
                     clock.Restart();
                     buttonClock.ForeColor = Color.Red;
