@@ -1,4 +1,97 @@
-﻿using System;
+﻿//                    		ID INFORMATION						       
+//      Programmers			 :	    James McCarthy          	   
+//      Assignment #		 :   	 TA#1.3		  
+//      Assignment Name		 :	    Tickee-Tackee-Toe            
+//      Course # and Title	 :	    CISC 193 - C#				  
+//      Class Meeting Time	 :	    MW 9:35 - 12:40 			  
+//      Instructor			 :	    Professor Forman 			   
+//      Hours				 :		  20							   
+//      Difficulty			 :	    	7							   
+//      Completion Date		 :	    2/20/2015			                  
+//      Project Name		 :  	   JamesTicTacToe                     
+//*********************************************************************
+//                         CREDITS   						       
+//
+//     Thank you foremost to all of my friends, classmates, and especially 
+//     Professor Forman who encourage me to test my limits and branch out to 
+//     learn as much as possible on every assignment. Also, thank you to the 
+//     Binus University Software Laboratory Center for producing wonderful C# 
+//     tutorials, the Socket Simple Multiplayer Game tutorial was especially 
+//     helpful in teaching me how to make this program.
+//
+//   
+//*********************************************************************
+//					CUSTOM DEFINED FUNCTIONS
+//
+//      startGame()
+//      resultDraw()
+//      testDraw()
+//      checkBoardState()
+//      resultTerrorist()
+//      resultCounterTerrorist()
+//      highlightCT()
+//      highlightT()
+//      swapPlayerHighlight()
+//      endGame()
+//      checkIPandPort()
+//      connectAsServer()
+//      connectAsClient()
+//      getDataFromOthers()
+//      checkTurn()
+//      keyPressed()
+//
+//********************************************************************
+//
+//					EVENT DRIVEN FUNCTIONS
+//		
+//      label_Highlight
+//      label_Unhighlight
+//      gameBox_Click
+//      timerNextRound_Tick
+//      timerClock_Tick
+//      labelSelectGeneral_Click
+//      jamesTextBoxCredits_LinkClicked
+//      JamesForm_Load
+//      pictureButton_Enter
+//      pictureButton_Leave
+//      labelSelectGo_Enter
+//      labelSelectGo_Leave	
+//
+//********************************************************************
+//							MEDIA     					
+//
+//                         IMAGES:
+//
+//Main menu background: 
+//http://wallpaperswide.com/counter_strike_cs_go-wallpapers.html
+//
+//Alternate background
+//http://clang7.com.es/wp-content/gallery/cs_go/59570123.jpg
+//
+//Terrorist logo:
+//http://steamcommunity.com/sharedfiles/filedetails/?id=239173712
+//
+//Counter-Terrorist logo:
+//http://steamcommunity.com/sharedfiles/filedetails/?id=239173712
+//
+//Terrorist portrait:
+//http://media.vandal.net/master/14873/2012101212119_8.jpg
+//
+//Counter-Terrorist Portrait:
+//http://media.officialplaystationmagazine.co.uk/files/2012/09/2012-02-22_00060.jpg
+//
+//Bomb icon: 
+//http://www.cyborgmatt.com/wp-content/uploads/2013/11/CSGO_C4_Flip.jpg
+//
+//Defuse kit icon: 
+//http://img2.wikia.nocookie.net/__cb20090314213215/cs_/images/6/6b/Defuser.png
+//
+//                            AUDIO:
+//
+//All audio files used in this program come from the game files of 
+//Counter-Strike: Global Offensive and belong to Valve Corporation.
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -44,7 +137,11 @@ namespace JamesTicTacToe
         private int scoreCT = 0;
 
 
-
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: JamesForm Constructor
+        /// 
+        /// DESCRIPTION: Sets properties of non-buttonlike buttons, plays music
+        ////////////////////////////////////////////////////////////////////////
         public JamesForm()
         {
             InitializeComponent();
@@ -76,7 +173,11 @@ namespace JamesTicTacToe
         }
 
 
-
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: createparams
+        /// 
+        /// DESCRIPTION: turns on faster buffering for less control flickering
+        ////////////////////////////////////////////////////////////////////////
         protected override CreateParams CreateParams
         {
             get
@@ -85,13 +186,39 @@ namespace JamesTicTacToe
                 cp.ExStyle |= 0x02000000;  // Turn on WS_EX_COMPOSITED
                 return cp;
             }
-        } 
+        }
+
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: JamesForm_Load
+        /// 
+        /// DESCRIPTION: sets date/time label text
+        ////////////////////////////////////////////////////////////////////////
+        private void JamesForm_Load(object sender, EventArgs e)
+        {
+            labelDateTime.Text = DateTime.Now.ToShortDateString() + "\n" +
+                                 DateTime.Now.ToShortTimeString();
+        }
+
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: jamesTextBoxCredits_LinkClicked
+        /// 
+        /// DESCRIPTION: goes to the website link clicked on in new web browser
+        ////////////////////////////////////////////////////////////////////////
+        private void jamesTextBoxCredits_LinkClicked(object sender, LinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start(e.LinkText);
+        }
+
 
     ////////////////////////////////////////////////////////////////////////////
     ///     SELECTION LABEL HIGHLIGHTING
     ///
 
-        //https://msdn.microsoft.com/en-us/library/dd553231.aspx
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: label_Highlight
+        /// 
+        /// DESCRIPTION: highlights label when mouse enters
+        ////////////////////////////////////////////////////////////////////////
         private void label_Highlight(object sender, EventArgs e)
         {
             Label highlightedLabel = sender as Label;
@@ -123,6 +250,11 @@ namespace JamesTicTacToe
             }
         }
 
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: label_unhighlight
+        /// 
+        /// DESCRIPTION: de-highlights label when mouse leaves
+        ////////////////////////////////////////////////////////////////////////
         private void label_Unhighlight(object sender, EventArgs e)
         {
             Label unhighlightedLabel = sender as Label;
@@ -142,22 +274,17 @@ namespace JamesTicTacToe
     /// END SELECTION LABEL HIGHLIGHTING
     ////////////////////////////////////////////////////////////////////////////
 
-    ////////////////////////////////////////////////////////////////////////////
-    ///  MAIN MENU SELECTIONS
-    ///
 
-
-
-
-    ///
-    /// END SELECTION LABEL HIGHLIGHTING
-    ////////////////////////////////////////////////////////////////////////////
 
     ////////////////////////////////////////////////////////////////////////////
     /// 
     ///  GAME
     ///
-
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: startGame()
+        /// 
+        /// DESCRIPTION: plays game music, shows game board
+        ////////////////////////////////////////////////////////////////////////
         private void startGame()
         {
             jamesMediaPlayer.URL = @"Resources\CSGOGameTheme.wav";
@@ -172,7 +299,6 @@ namespace JamesTicTacToe
             timerClock.Start();
             clock.Start();
 
-
             if (networkGame)
             {
                 checkTurn();
@@ -182,8 +308,6 @@ namespace JamesTicTacToe
                 isHost = false;
                 isMyTurn = true;
             }
-
-
 
             panelMainMenu.Hide();
             panelNetworkSetup.Hide();
@@ -202,6 +326,11 @@ namespace JamesTicTacToe
             labelPlayerNameRight.ForeColor = Color.Gray;
         }
 
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: resultDraw
+        /// 
+        /// DESCRIPTION: triggers game state for a draw
+        ////////////////////////////////////////////////////////////////////////
         private void resultDraw()
         {
             haveWinner = false;
@@ -225,6 +354,11 @@ namespace JamesTicTacToe
             labelRoundWinner.Text = "Round Draw";
         }
 
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: testDraw 
+        /// 
+        /// DESCRIPTION: Checks to see if the game is a draw
+        ////////////////////////////////////////////////////////////////////////
         private bool testDraw()
         {
             int testDraw = 0;
@@ -248,6 +382,11 @@ namespace JamesTicTacToe
             return false;
         }
 
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: resetBoard 
+        /// 
+        /// DESCRIPTION: updates the board state to the value of board array
+        ////////////////////////////////////////////////////////////////////////
         private void resetBoard()
         {
             
@@ -265,11 +404,13 @@ namespace JamesTicTacToe
  
         }
 
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: SetEnabled 
+        /// 
+        /// DESCRIPTION: turns on/off square clickability
+        ////////////////////////////////////////////////////////////////////////
         private void SetEnabled(bool value)
         {
-            
-
-
             g00.Enabled = value;
             g01.Enabled = value;
             g02.Enabled = value;
@@ -283,6 +424,12 @@ namespace JamesTicTacToe
 
         ////////////////////////////////////////////////////////////////////////
         ///   MAIN GAME BOARD LOGIC
+        ////////////////////////////////////////////////////////////////////////
+
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: checkBoardState 
+        /// 
+        /// DESCRIPTION: the main game logic, checks each turn for winner or draw
         ////////////////////////////////////////////////////////////////////////
         private void checkBoardState()
         {
@@ -451,6 +598,11 @@ namespace JamesTicTacToe
             }
         }
 
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: resultTerrorist 
+        /// 
+        /// DESCRIPTION: trigger end state for terrorist win
+        ////////////////////////////////////////////////////////////////////////
         private void resultTerrorists()
         {
             soundEffectPlayer1.settings.volume = 20;
@@ -461,6 +613,11 @@ namespace JamesTicTacToe
             pictureBoxWinningTeam.Image = Properties.Resources.icon_terrorist;
 
         }
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: resultCounterTerrorist 
+        /// 
+        /// DESCRIPTION: triggers end state for CT victory
+        ////////////////////////////////////////////////////////////////////////
         private void resultCounterTerrorists()
         {
             soundEffectPlayer1.settings.volume = 20;
@@ -471,10 +628,12 @@ namespace JamesTicTacToe
             pictureBoxWinningTeam.Image = Properties.Resources.icon_CT_1;
         }
 
-        ////////////////////////////////////////////////////////////////////////
-        /// END GAME BOARD LOGIC
-        ////////////////////////////////////////////////////////////////////////
 
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: texthere 
+        /// 
+        /// DESCRIPTION:
+        ////////////////////////////////////////////////////////////////////////
         private void setBoardBasedOnBoxName(string code)
         {
             // 0=netral, 1=server, 2=clint
@@ -483,13 +642,13 @@ namespace JamesTicTacToe
         }
 
 
-        ///GAME BOX CLICKED
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: gameBox_Click 
+        /// 
+        /// DESCRIPTION: handles what happens when user clicks box on game board
+        ////////////////////////////////////////////////////////////////////////
         private void gameBox_Click(object sender, MouseEventArgs e)
         {
-            //soundEffectPlayer2.URL = @"sound_click_5.wav";
-           // soundEffectPlayer2.settings.volume = 5;
-           
-
             PictureBox clickedBox = sender as PictureBox;   
 
             if ((isMyTurn) && (!haveWinner))
@@ -532,6 +691,15 @@ namespace JamesTicTacToe
             }
         }
 
+        ////////////////////////////////////////////////////////////////////////
+        /// END GAME BOARD LOGIC
+        ////////////////////////////////////////////////////////////////////////
+
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: highlightCT 
+        /// 
+        /// DESCRIPTION: lets user(s) know that it is the CTs turn
+        ////////////////////////////////////////////////////////////////////////
         private void highlightCT()
         {
             pictureBoxPortraitRightT.Image = Properties.Resources.portrait_terrorist_alt_3;
@@ -547,6 +715,11 @@ namespace JamesTicTacToe
 
         }
 
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: highlightT 
+        /// 
+        /// DESCRIPTION: lets user(s) know that it is the Ts turn
+        ////////////////////////////////////////////////////////////////////////
         private void highlightT()
         {
             pictureBoxPortraitLeftCT.Image = Properties.Resources.portrait_CT_alt_3;
@@ -562,6 +735,11 @@ namespace JamesTicTacToe
 
         }
 
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: swapPlayerHighlight 
+        /// 
+        /// DESCRIPTION: changes highlight scheme based on whos turn it is
+        ////////////////////////////////////////////////////////////////////////
         private void swapPlayerHighlight()
         {
             if (haveWinner && networkGame)
@@ -619,6 +797,11 @@ namespace JamesTicTacToe
                 }          
         }
 
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: endGame() 
+        /// 
+        /// DESCRIPTION: changes game state to what happens when the game is over
+        ////////////////////////////////////////////////////////////////////////
         private void endGame()
         {
             scoreCT = 0;
@@ -649,6 +832,11 @@ namespace JamesTicTacToe
             this.BackgroundImage = Properties.Resources.form_back_1;
         }
 
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: timerNextRound_Tick 
+        /// 
+        /// DESCRIPTION: pauses for message display, starts a new round
+        ////////////////////////////////////////////////////////////////////////
         private void timerNextRound_Tick(object sender, EventArgs e)
         {
 
@@ -712,6 +900,11 @@ namespace JamesTicTacToe
             
         }
 
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: timerClock_tick 
+        /// 
+        /// DESCRIPTION: updates game clock
+        ////////////////////////////////////////////////////////////////////////
         private void timerClock_Tick(object sender, EventArgs e)
         {
             TimeSpan ts = clock.Elapsed;
@@ -729,8 +922,15 @@ namespace JamesTicTacToe
                 buttonClock.Text = elapsed;
             }
 
-        }
+            labelDateTime.Text = DateTime.Now.ToShortDateString() + "\n" +
+                                 DateTime.Now.ToShortTimeString();
 
+        }
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: keyPressed 
+        /// 
+        /// DESCRIPTION: when user presses escape, trigger input dialog to quit
+        ////////////////////////////////////////////////////////////////////////
         private void keyPressed(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Escape)
@@ -776,6 +976,11 @@ namespace JamesTicTacToe
     ///  NETWORK SETUP MENU
     ///
 
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: pictureButton_Enter 
+        /// 
+        /// DESCRIPTION: plays rollover sound effect on mouse enter
+        ////////////////////////////////////////////////////////////////////////
         private void pictureButton_Enter(object sender, EventArgs e)
         {
             PictureBox boxEntered = sender as PictureBox;
@@ -794,6 +999,11 @@ namespace JamesTicTacToe
 
         }
 
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: pictureButton_Leave 
+        /// 
+        /// DESCRIPTION: dehiglights button on mouse leave
+        ////////////////////////////////////////////////////////////////////////
         private void pictureButton_Leave(object sender, EventArgs e)
         {
            
@@ -810,6 +1020,11 @@ namespace JamesTicTacToe
 
         }
 
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: labelSelectGo_Enter 
+        /// 
+        /// DESCRIPTION: visually echanges button when user mouses over
+        ////////////////////////////////////////////////////////////////////////
         private void labelSelectGo_Enter(object sender, EventArgs e)
         {
             if (canStart)
@@ -819,6 +1034,11 @@ namespace JamesTicTacToe
             }
         }
 
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: labelSelectGo_Leave 
+        /// 
+        /// DESCRIPTION: visually changes button when users mouse exits
+        ////////////////////////////////////////////////////////////////////////
         private void labelSelectGo_Leave(object sender, EventArgs e)
         {
             if (canStart)
@@ -827,6 +1047,11 @@ namespace JamesTicTacToe
             }
         }
 
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: pictureButtonCT_Click 
+        /// 
+        /// DESCRIPTION: allows a user to select the CT team
+        ////////////////////////////////////////////////////////////////////////
         private void pictureButtonCT_Click(object sender, EventArgs e)
         {
             soundEffectPlayer2.URL = @"Resources\sound_click_5.wav";
@@ -848,6 +1073,11 @@ namespace JamesTicTacToe
             isMyTurn = true;
         }
 
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: pictureButtonT_Click 
+        /// 
+        /// DESCRIPTION: allows a user to select the Terrorist team
+        ////////////////////////////////////////////////////////////////////////
         private void pictureButtonT_Click(object sender, EventArgs e)
         {
             soundEffectPlayer2.URL = @"Resources\sound_click_5.wav";
@@ -875,6 +1105,11 @@ namespace JamesTicTacToe
     ////////////////////////////////////////////////////////////////////////////
     /// NETWORK CONNECTION
     ///
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: labelSelectGo_Click 
+        /// 
+        /// DESCRIPTION: starts up a network game if IP/Port are correct
+        ////////////////////////////////////////////////////////////////////////
         private void labelSelectGo_Click(object sender, EventArgs e)
         {
             if (canStart)
@@ -900,6 +1135,11 @@ namespace JamesTicTacToe
             }
         }
 
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: checkIPandPort 
+        /// 
+        /// DESCRIPTION: checks if IP and port are good to go
+        ////////////////////////////////////////////////////////////////////////
         private bool checkIPandPort(string ip, string port)
         {
             //Check the ip and port is in valid format
@@ -919,6 +1159,11 @@ namespace JamesTicTacToe
             return false;
         }
 
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: ConnectAsServer 
+        /// 
+        /// DESCRIPTION: connects a user as the host of the network game
+        ////////////////////////////////////////////////////////////////////////
         private void ConnectAsServer(string ip, int port)
         {
             con = new SocketManagement(ip, port);
@@ -927,6 +1172,11 @@ namespace JamesTicTacToe
                 startGame();
             }
         }
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: ConnectAsClient 
+        /// 
+        /// DESCRIPTION: connects the user as the client of the network game
+        ////////////////////////////////////////////////////////////////////////
         private void ConnectAsClient(string ip, int port)
         {
             con = new SocketManagement(ip, port);
@@ -936,7 +1186,11 @@ namespace JamesTicTacToe
             }
         }
 
-        //triggered on opponents click
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: GetDataFromOthers 
+        /// 
+        /// DESCRIPTION: exchange data with user running on another thread
+        ////////////////////////////////////////////////////////////////////////
         private void GetDataFromOthers()
         {
             Task.Factory.StartNew(() =>
@@ -950,6 +1204,11 @@ namespace JamesTicTacToe
             });
         }
 
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: checkTurn 
+        /// 
+        /// DESCRIPTION: checks to see whos turn it is
+        ////////////////////////////////////////////////////////////////////////
         private void checkTurn()
         {
             if (!this.InvokeRequired)
@@ -977,7 +1236,11 @@ namespace JamesTicTacToe
         }
 
 
-
+        ////////////////////////////////////////////////////////////////////////
+        /// NAME: labelSelectGeneral_Click 
+        /// 
+        /// DESCRIPTION: play special sound and update visually when label clicked
+        ////////////////////////////////////////////////////////////////////////
         private void labelSelectGeneral_Click(object sender, EventArgs e)
         {
 
@@ -1051,8 +1314,6 @@ namespace JamesTicTacToe
                 Close();
             }
         }
-
-
 
     ///
     /// END NETWORK SETUP MENU

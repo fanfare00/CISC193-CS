@@ -79,14 +79,14 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="JamesTicTacToe.exe" size="2495448">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="JamesTicTacToe.exe" size="2496984">
       <assemblyIdentity name="JamesTicTacToe" version="1.0.0.0" language="neutral" processorArchitecture="msil" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>mfxCLWLIGVwCFR4Z/esAlABpYL2n5hYOf3TPbuoaxbA=</dsig:DigestValue>
+        <dsig:DigestValue>nPS38IyMA0eKoksd0qyiS7scSm+DrPgyuIHo9cEQRH8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
@@ -99,13 +99,13 @@
       <dsig:DigestValue>QgJ5aXVsh+LXAYOK0iTCiNxPuNbbZxnvLPjoilWB2/I=</dsig:DigestValue>
     </hash>
   </file>
-  <file name="JamesTicTacToe.exe.config" size="187">
+  <file name="JamesTicTacToe.exe.config" size="182">
     <hash>
       <dsig:Transforms>
         <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
       </dsig:Transforms>
       <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-      <dsig:DigestValue>xm4bo26HQ0LNVwz1vdPYtzhkpMnp2AI5i+f0b+OahTI=</dsig:DigestValue>
+      <dsig:DigestValue>PbQiHFOih9uz3RPvvsStiPKcsu3PE8/gyCn2QGUyyf4=</dsig:DigestValue>
     </hash>
   </file>
 </asmv1:assembly>

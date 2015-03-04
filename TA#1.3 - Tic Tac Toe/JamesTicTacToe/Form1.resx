@@ -986,12 +986,6 @@ Example:
   <metadata name="jamesTextBoxCredits.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="labeCreditsHeader.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="jamesTextBoxCredits.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
   <data name="jamesTextBoxCredits.Text" xml:space="preserve">
     <value>                    - ABOUT -
 
@@ -1010,6 +1004,16 @@ Hours :                                     20
 Difficulty :                                 7
 Program Name :       Tic-Tac: Global Offensive
 
+
+                   - STARS -
+
+1 STAR: Big bold and beautiful controls
+1 STAR: Links to three favorite websites
+1 STAR: Make the game automatically alternate
+STAR(s): Pizazz: multiplayer gameplay
+1 STAR: Three advanced features: classes, arrays, custom controls
+
+TOTAL STARS: 5+
 
                    - MEDIA -
 
@@ -1043,7 +1047,13 @@ AUDIO:
 
 All audio files used in this program come from the game files of Counter-Strike: Global Offensive and belong to Valve Corporation.
 
-</value>
+Favorite Websites:
+
+http://www.youtube.com
+
+http://twitch.tv
+
+http://stackoverflow.com/</value>
   </data>
   <metadata name="labeCreditsHeader.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

@@ -89,6 +89,7 @@
             this.panelCredits = new System.Windows.Forms.Panel();
             this.jamesTextBoxCredits = new JamesCustomControls.JamesTextBox();
             this.labeCreditsHeader = new System.Windows.Forms.Label();
+            this.labelDateTime = new System.Windows.Forms.Label();
             this.panelMainMenu.SuspendLayout();
             this.panelLeftPlayerCT.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPortraitLeftCT)).BeginInit();
@@ -868,6 +869,7 @@
             this.jamesTextBoxCredits.Size = new System.Drawing.Size(446, 365);
             this.jamesTextBoxCredits.TabIndex = 71;
             this.jamesTextBoxCredits.Text = resources.GetString("jamesTextBoxCredits.Text");
+            this.jamesTextBoxCredits.LinkClicked += new System.Windows.Forms.LinkClickedEventHandler(this.jamesTextBoxCredits_LinkClicked);
             // 
             // labeCreditsHeader
             // 
@@ -880,12 +882,25 @@
             this.labeCreditsHeader.Text = "CREDITS";
             this.labeCreditsHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // labelDateTime
+            // 
+            this.labelDateTime.AutoSize = true;
+            this.labelDateTime.BackColor = System.Drawing.Color.Transparent;
+            this.labelDateTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelDateTime.ForeColor = System.Drawing.Color.Khaki;
+            this.labelDateTime.Location = new System.Drawing.Point(721, 1);
+            this.labelDateTime.Name = "labelDateTime";
+            this.labelDateTime.Size = new System.Drawing.Size(51, 16);
+            this.labelDateTime.TabIndex = 72;
+            this.labelDateTime.Text = "label1";
+            // 
             // JamesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::JamesTicTacToe.Properties.Resources.form_back_1;
             this.ClientSize = new System.Drawing.Size(784, 561);
+            this.Controls.Add(this.labelDateTime);
             this.Controls.Add(this.soundEffectPlayer2);
             this.Controls.Add(this.soundEffectPlayer1);
             this.Controls.Add(this.jamesMediaPlayer);
@@ -893,16 +908,17 @@
             this.Controls.Add(this.panelScoreTime);
             this.Controls.Add(this.panelMainMenu);
             this.Controls.Add(this.panelLeftPlayerCT);
-            this.Controls.Add(this.panelNetworkSetup);
             this.Controls.Add(this.panelCredits);
             this.Controls.Add(this.panelGameBoard);
             this.Controls.Add(this.panelHelp);
             this.Controls.Add(this.panelRightPlayerT);
+            this.Controls.Add(this.panelNetworkSetup);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.KeyPreview = true;
             this.Name = "JamesForm";
             this.Text = "Tic-Tac: Global Offensive";
+            this.Load += new System.EventHandler(this.JamesForm_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.keyPressed);
             this.panelMainMenu.ResumeLayout(false);
             this.panelLeftPlayerCT.ResumeLayout(false);
@@ -936,6 +952,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.jamesMediaPlayer)).EndInit();
             this.panelCredits.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -1000,6 +1017,7 @@
         private System.Windows.Forms.Panel panelCredits;
         private JamesCustomControls.JamesTextBox jamesTextBoxCredits;
         private System.Windows.Forms.Label labeCreditsHeader;
+        private System.Windows.Forms.Label labelDateTime;
     }
 }
 

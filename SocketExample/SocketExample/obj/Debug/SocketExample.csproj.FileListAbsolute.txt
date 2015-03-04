@@ -7,3 +7,6 @@ C:\Users\james\Desktop\CompSci 2015\Visual Studio Projects\SocketExample\SocketE
 C:\Users\james\Desktop\CompSci 2015\Visual Studio Projects\SocketExample\SocketExample\bin\Debug\SocketExample.exe
 C:\Users\james\Desktop\CompSci 2015\Visual Studio Projects\SocketExample\SocketExample\bin\Debug\SocketExample.pdb
 C:\Users\james\Desktop\CompSci 2015\Visual Studio Projects\SocketExample\SocketExample\obj\Debug\SocketExample.Properties.Resources.resources
+C:\Users\james\Desktop\CompSci 2015\CISC193-CS\SocketExample\SocketExample\bin\Debug\SocketExample.exe.config
+C:\Users\james\Desktop\CompSci 2015\CISC193-CS\SocketExample\SocketExample\obj\Debug\SocketExample.exe
+C:\Users\james\Desktop\CompSci 2015\CISC193-CS\SocketExample\SocketExample\obj\Debug\SocketExample.pdb
